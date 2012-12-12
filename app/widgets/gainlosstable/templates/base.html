@@ -1,0 +1,33 @@
+<div id="positions-table-scroller">
+  <table id="positions-table">
+    <thead>
+      <tr>
+        <th class="priority1 security">Security</th>
+        <th class="priority2 symbol">Symbol</th>
+        <th class="priority1 quantity">Quantity</th>
+        <th class="priority1 last-trade">Last Trade</th>
+        <th class="priority1 market-value">Market Value</th>
+        <th class="priority2 price-paid">Price Paid</th>
+        <th class="priority3 total-cost">Total Cost</th>
+        <th class="priority3 gain">Gain</th>
+        <th class="priority2 gain-percent">Gain %</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each chartData}}
+        <tr>
+          <td class="priority1 security">{{this.instrumentName}}}</td>
+          <td class="priority2 symbol">{{this.instrumentSymbol}}</td>
+          <td class="priority1 quantity">{{this.quantity}}</td>
+          <td class="priority1 last-trade">{{formatMoney this.lastTrade}}</td>
+          <td class="priority1 market-value">{{formatMoney this.marketValue}}</td>
+          <td class="priority2 price-paid">{{formatMoney this.pricePaid}}</td>
+          <td class="priority3 total-cost">{{formatMoney this.totalCost}}</td>
+          <td class="priority3 gain {{getSign gain}}">{{formatMoney this.gain}}</td>
+          <td class="priority2 gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
+        </tr>
+      {{/each}}
+      <!-- Table Rows Go Here -->
+    </tbody>
+  </table>
+</div>

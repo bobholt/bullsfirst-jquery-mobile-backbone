@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Bullsfirst - jQuery Mobile</title>
+  <link rel="stylesheet" href="/app/css/index.css" />
+
+</head>
+
+<body>
+
+  <!-- //-beg- home -->
+  <section id="home" data-role="page" data-theme="b">
+  </section>
+  <!-- //-end- home -->
+
+  <!-- //-beg- positions -->
+  <section id="positions" data-role="page">
+
+      <!-- //-beg- positions/header -->
+      <header data-role="header" id="positions-header">
+          <h1>Positions</h1>
+          <a href="#home" class="ui-btn-right">Sign Out</a>
+      </header>
+      <!-- //-end- positions/header -->
+
+      <!-- //-beg- positions/content -->
+      <section id="positions-section" data-role="content">
+
+      </section>
+      <!-- //-end- positions/content -->
+
+      <!-- //-beg- positions/footer -->
+      <div id="positions-footer" data-role="footer" data-id="tabbar" data-position="fixed">
+          <div data-role="navbar">
+              <ul>
+                  <li><a href="#positions" class="ui-btn-active ui-state-persist">Positions</a></li>
+                  <li><a href="#accounts">Accounts</a></li>
+                  <li><a href="#orders">Orders</a></li>
+                  <li><a href="#transactions">Transactions</a></li>
+              </ul>
+          </div>
+      </div>
+      <!-- //-end- positions/footer -->
+  </section>
+  <!-- //-end- positions -->
+
+  <!-- //-beg- accounts -->
+  <section id="accounts" data-role="page">
+
+      <!-- //-beg- accounts/header -->
+      <header data-role="header">
+          <h1>Accounts</h1>
+          <a href="#home" class="ui-btn-right">Sign Out</a>
+      </header>
+      <!-- //-end- accounts/header -->
+
+      <!-- //-beg- accounts/content -->
+      <section id="accounts-section" data-role="content">
+
+          <div class="layout-info"><br />Window Size: <span class="window-size"></span></div>
+
+          <!-- //-beg- accounts-summary -->
+          <table id="accounts-summary">
+              <thead>
+                  <tr>
+                      <th>Current Market Value</th>
+                      <th>Total Investment</th>
+                      <th>Gain</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>$322,102</td>
+                      <td>$240,375</td>
+                      <td class='positive'>$81,727</td>
+                  </tr>
+              </tbody>
+          </table>
+          <!-- //-end- accounts-summary -->
+
+          <!-- //-beg- accounts-chart -->
+          <div id="accounts-chart" class="gain-loss-chart"></div>
+          <!-- //-end- accounts-chart -->
+
+          <!-- //-beg- accounts-table -->
+<!--            <div id="accounts-table-wrapper">
+              <div id="accounts-table-scroller">
+                  <table id="accounts-table">
+                      <thead>
+                          <tr>
+                              <th class="priority1 security">Security</th>
+                              <th class="priority2 symbol">Symbol</th>
+                              <th class="priority1 quantity">Quantity</th>
+                              <th class="priority1 last-trade">Last Trade</th>
+                              <th class="priority1 market-value">Market Value</th>
+                              <th class="priority2 price-paid">Price Paid</th>
+                              <th class="priority3 total-cost">Total Cost</th>
+                              <th class="priority3 gain">Gain</th>
+                              <th class="priority2 gain-percent">Gain %</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+-->
+          <!-- //-end- accounts-table -->
+
+      </section>
+      <!-- //-end- accounts/content -->
+
+      <!-- //-beg- accounts/footer -->
+      <div data-role="footer" data-id="tabbar" data-position="fixed">
+          <div data-role="navbar">
+              <ul>
+                  <li><a href="#positions">Positions</a></li>
+                  <li><a href="#accounts" class="ui-btn-active ui-state-persist">Accounts</a></li>
+                  <li><a href="#orders">Orders</a></li>
+                  <li><a href="#transactions">Transactions</a></li>
+              </ul>
+          </div>
+      </div>
+      <!-- //-end- accounts/footer -->
+  </section>
+  <!-- //-end- accounts -->
+
+  <!-- //-beg- orders -->
+  <section id="orders" data-role="page">
+
+      <!-- //-beg- orders/header -->
+      <header data-role="header">
+          <h1>Orders</h1>
+          <a href="#home" class="ui-btn-right">Sign Out</a>
+      </header>
+      <!-- //-end- orders/header -->
+
+      <!-- //-beg- orders/content -->
+      <section id="orders-section" data-role="content">
+          Orders
+      </section>
+      <!-- //-end- orders/content -->
+
+      <!-- //-beg- orders/footer -->
+      <div data-role="footer" data-id="tabbar" data-position="fixed">
+          <div data-role="navbar">
+              <ul>
+                  <li><a href="#positions">Positions</a></li>
+                  <li><a href="#accounts">Accounts</a></li>
+                  <li><a href="#orders" class="ui-btn-active ui-state-persist">Orders</a></li>
+                  <li><a href="#transactions">Transactions</a></li>
+              </ul>
+          </div>
+      </div>
+      <!-- //-end- orders/footer -->
+  </section>
+  <!-- //-end- orders -->
+
+  <!-- //-beg- transactions -->
+  <section id="transactions" data-role="page">
+
+      <!-- //-beg- transactions/header -->
+      <header data-role="header">
+          <h1>Transactions</h1>
+          <a href="#home" class="ui-btn-right">Sign Out</a>
+      </header>
+      <!-- //-end- transactions/header -->
+
+      <!-- //-beg- transactions/content -->
+      <section id="transactions-section" data-role="content">
+          Transactions
+      </section>
+      <!-- //-end- transactions/content -->
+
+      <!-- //-beg- transactions/footer -->
+      <div data-role="footer" data-id="tabbar" data-position="fixed">
+          <div data-role="navbar">
+              <ul>
+                  <li><a href="#positions">Positions</a></li>
+                  <li><a href="#accounts">Accounts</a></li>
+                  <li><a href="#orders">Orders</a></li>
+                  <li><a href="#transactions" class="ui-btn-active ui-state-persist">Transactions</a></li>
+              </ul>
+          </div>
+      </div>
+      <!-- //-end- accounts/footer -->
+  </section>
+
+  <script data-main="app/main" src="/libs/js/require.js"></script>
+  <script src="app/config.js"></script>
+
+</body>
+</html>

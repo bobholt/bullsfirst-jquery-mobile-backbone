@@ -1,0 +1,11 @@
+/* -----------------------------------------------------------------------------
+ * Style for the medium display (500-899)
+ * -------------------------------------------------------------------------- */
+.layout-info:before { content: "Medium Layout (500-899)"; }
+
+/* -----------------------------------------------------------------------------
+ * Table column priorities
+ * -------------------------------------------------------------------------- */
+/* .priority1 { display: table-cell; } */  /* this is the default */
+/* .priority2 { display: table-cell; } */  /* this is the default */
+.priority3 { display: none; }

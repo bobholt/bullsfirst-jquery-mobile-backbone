@@ -1,0 +1,11 @@
+/* -----------------------------------------------------------------------------
+ * Style for the wide display 900+
+ * -------------------------------------------------------------------------- */
+.layout-info:before { content: "Wide Layout (900+)"; }
+
+/* -----------------------------------------------------------------------------
+ * Table column priorities
+ * -------------------------------------------------------------------------- */
+/* .priority1 { display: table-cell; } */  /* this is the default */
+/* .priority2 { display: table-cell; } */  /* this is the default */
+/* .priority3 { display: table-cell; } */  /* this is the default */

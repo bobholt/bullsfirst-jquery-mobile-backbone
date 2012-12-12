@@ -1,0 +1,1675 @@
+[ {
+  "id" : 1532,
+  "name" : "Brokerage Account 1",
+  "cashPosition" : {
+    "amount" : 44664.00,
+    "currency" : "USD"
+  },
+  "marketValue" : {
+    "amount" : 721114.50,
+    "currency" : "USD"
+  },
+  "editPermission" : true,
+  "tradePermission" : true,
+  "transferPermission" : true,
+  "positions" : [ {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "AAPL",
+    "instrumentName" : "Apple Inc.",
+    "quantity" : 100,
+    "lastTrade" : {
+      "amount" : 651,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 65100.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 368.0600,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 36806.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 28294.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.7687,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "AAPL",
+      "instrumentName" : "Apple Inc.",
+      "lotId" : 435,
+      "lotCreationTime" : "2012-12-10T16:41:38.000-05:00",
+      "quantity" : 5,
+      "lastTrade" : {
+        "amount" : 651,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 3255.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 651.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 3255.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 0.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.0000
+    }, {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "AAPL",
+      "instrumentName" : "Apple Inc.",
+      "lotId" : 436,
+      "lotCreationTime" : "2012-12-10T16:41:56.000-05:00",
+      "quantity" : 1,
+      "lastTrade" : {
+        "amount" : 651,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 651.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 651.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 651.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 0.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.0000
+    }, {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "AAPL",
+      "instrumentName" : "Apple Inc.",
+      "lotId" : 437,
+      "lotCreationTime" : "2012-12-11T08:46:50.000-05:00",
+      "quantity" : 94,
+      "lastTrade" : {
+        "amount" : 651,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 61194.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 350.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 32900.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 28294.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.8600
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "ADBE",
+    "instrumentName" : "Adobe Systems Incorporated",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 35.2500,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 10575.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 20.2200,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 6066.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 4509.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.7433,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "ADBE",
+      "instrumentName" : "Adobe Systems Incorporated",
+      "lotId" : 444,
+      "lotCreationTime" : "2012-12-11T08:48:54.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 35.2500,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 10575.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 20.2200,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 6066.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 4509.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.7433
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "AKAM",
+    "instrumentName" : "Akamai Technologies Inc.",
+    "quantity" : 500,
+    "lastTrade" : {
+      "amount" : 39.4800,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 19740.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 40.5900,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 20295.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -555.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.0273,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "AKAM",
+      "instrumentName" : "Akamai Technologies Inc.",
+      "lotId" : 455,
+      "lotCreationTime" : "2012-12-11T08:51:24.000-05:00",
+      "quantity" : 500,
+      "lastTrade" : {
+        "amount" : 39.4800,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 19740.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 40.5900,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 20295.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -555.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.0273
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "AMD",
+    "instrumentName" : "Advanced Micro Devices Inc.",
+    "quantity" : 2000,
+    "lastTrade" : {
+      "amount" : 9.2900,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 18580.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 5.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 10000.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 8580.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.8580,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "AMD",
+      "instrumentName" : "Advanced Micro Devices Inc.",
+      "lotId" : 459,
+      "lotCreationTime" : "2012-12-11T08:52:03.000-05:00",
+      "quantity" : 2000,
+      "lastTrade" : {
+        "amount" : 9.2900,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 18580.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 5.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 10000.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 8580.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.8580
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "AMZN",
+    "instrumentName" : "Amazon.com Inc.",
+    "quantity" : 100,
+    "lastTrade" : {
+      "amount" : 258.1900,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 25819.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 141.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 14100.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 11719.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.8311,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "AMZN",
+      "instrumentName" : "Amazon.com Inc.",
+      "lotId" : 441,
+      "lotCreationTime" : "2012-12-11T08:48:03.000-05:00",
+      "quantity" : 100,
+      "lastTrade" : {
+        "amount" : 258.1900,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 25819.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 141.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 14100.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 11719.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.8311
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "BA",
+    "instrumentName" : "Boeing Company (The)",
+    "quantity" : 600,
+    "lastTrade" : {
+      "amount" : 70.7100,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 42426.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 57.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 34200.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 8226.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.2405,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "BA",
+      "instrumentName" : "Boeing Company (The)",
+      "lotId" : 452,
+      "lotCreationTime" : "2012-12-11T08:50:53.000-05:00",
+      "quantity" : 600,
+      "lastTrade" : {
+        "amount" : 70.7100,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 42426.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 57.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 34200.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 8226.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.2405
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "BAC",
+    "instrumentName" : "Bank of America Corporation",
+    "quantity" : 2000,
+    "lastTrade" : {
+      "amount" : 9.3250,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 18650.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 11.1000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 22200.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -3550.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.1599,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "BAC",
+      "instrumentName" : "Bank of America Corporation",
+      "lotId" : 457,
+      "lotCreationTime" : "2012-12-11T08:51:46.000-05:00",
+      "quantity" : 2000,
+      "lastTrade" : {
+        "amount" : 9.3250,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 18650.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 11.1000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 22200.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -3550.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.1599
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "CCE",
+    "instrumentName" : "Coca-Cola Enterprises Inc.",
+    "quantity" : 500,
+    "lastTrade" : {
+      "amount" : 26.5700,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 13285.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 18.1500,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 9075.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 4210.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.4639,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "CCE",
+      "instrumentName" : "Coca-Cola Enterprises Inc.",
+      "lotId" : 443,
+      "lotCreationTime" : "2012-12-11T08:48:40.000-05:00",
+      "quantity" : 500,
+      "lastTrade" : {
+        "amount" : 26.5700,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 13285.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 18.1500,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 9075.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 4210.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.4639
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "CL",
+    "instrumentName" : "Colgate-Palmolive Company",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 78.1200,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 23436.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 67.1600,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 20148.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 3288.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.1632,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "CL",
+      "instrumentName" : "Colgate-Palmolive Company",
+      "lotId" : 445,
+      "lotCreationTime" : "2012-12-11T08:49:05.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 78.1200,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 23436.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 67.1600,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 20148.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 3288.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.1632
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "CSCO",
+    "instrumentName" : "Cisco Systems Inc.",
+    "quantity" : 600,
+    "lastTrade" : {
+      "amount" : 19,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 11400.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 40.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 24000.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -12600.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.5250,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "CSCO",
+      "instrumentName" : "Cisco Systems Inc.",
+      "lotId" : 447,
+      "lotCreationTime" : "2012-12-11T08:49:42.000-05:00",
+      "quantity" : 600,
+      "lastTrade" : {
+        "amount" : 19,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 11400.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 40.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 24000.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -12600.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.5250
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "CVX",
+    "instrumentName" : "Chevron Corporation",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 102.1000,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 30630.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 62.7000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 18810.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 11820.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.6284,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "CVX",
+      "instrumentName" : "Chevron Corporation",
+      "lotId" : 439,
+      "lotCreationTime" : "2012-12-11T08:47:25.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 102.1000,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 30630.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 62.7000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 18810.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 11820.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.6284
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "DELL",
+    "instrumentName" : "Dell Inc.",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 15.1300,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 4539.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 6.5400,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 1962.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 2577.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 1.3135,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "DELL",
+      "instrumentName" : "Dell Inc.",
+      "lotId" : 446,
+      "lotCreationTime" : "2012-12-11T08:49:18.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 15.1300,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 4539.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 6.5400,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 1962.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 2577.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 1.3135
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "DIS",
+    "instrumentName" : "Walt Disney Company (The)",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 42.9500,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 12885.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 36.6700,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 11001.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 1884.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.1713,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "DIS",
+      "instrumentName" : "Walt Disney Company (The)",
+      "lotId" : 448,
+      "lotCreationTime" : "2012-12-11T08:49:55.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 42.9500,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 12885.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 36.6700,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 11001.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 1884.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.1713
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "DOW",
+    "instrumentName" : "Dow Chemical Company (The)",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 36.3200,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 10896.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 21.8800,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 6564.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 4332.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.6600,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "DOW",
+      "instrumentName" : "Dow Chemical Company (The)",
+      "lotId" : 449,
+      "lotCreationTime" : "2012-12-11T08:50:05.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 36.3200,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 10896.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 21.8800,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 6564.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 4332.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.6600
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "EBAY",
+    "instrumentName" : "eBay Inc.",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 47.1600,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 14148.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 37.9000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 11370.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 2778.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.2443,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "EBAY",
+      "instrumentName" : "eBay Inc.",
+      "lotId" : 450,
+      "lotCreationTime" : "2012-12-11T08:50:24.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 47.1600,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 14148.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 37.9000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 11370.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 2778.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.2443
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "EMC",
+    "instrumentName" : "EMC Corporation",
+    "quantity" : 300,
+    "lastTrade" : {
+      "amount" : 26.9000,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 8070.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 22.1900,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 6657.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 1413.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 0.2123,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "EMC",
+      "instrumentName" : "EMC Corporation",
+      "lotId" : 451,
+      "lotCreationTime" : "2012-12-11T08:50:41.000-05:00",
+      "quantity" : 300,
+      "lastTrade" : {
+        "amount" : 26.9000,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 8070.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 22.1900,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 6657.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 1413.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.2123
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "EMN",
+    "instrumentName" : "Eastman Chemical Company",
+    "quantity" : 250,
+    "lastTrade" : {
+      "amount" : 56.6900,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 14172.50,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 63.2300,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 15807.50,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -1635.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.1034,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "EMN",
+      "instrumentName" : "Eastman Chemical Company",
+      "lotId" : 456,
+      "lotCreationTime" : "2012-12-11T08:51:36.000-05:00",
+      "quantity" : 250,
+      "lastTrade" : {
+        "amount" : 56.6900,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 14172.50,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 63.2300,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 15807.50,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -1635.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.1034
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "GE",
+    "instrumentName" : "General Electric Company",
+    "quantity" : 1000,
+    "lastTrade" : {
+      "amount" : 20.8200,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 20820.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 22.5300,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 22530.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -1710.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.0759,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "GE",
+      "instrumentName" : "General Electric Company",
+      "lotId" : 454,
+      "lotCreationTime" : "2012-12-11T08:51:14.000-05:00",
+      "quantity" : 1000,
+      "lastTrade" : {
+        "amount" : 20.8200,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 20820.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 22.5300,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 22530.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -1710.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.0759
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "GOOG",
+    "instrumentName" : "Google Inc.",
+    "quantity" : 200,
+    "lastTrade" : {
+      "amount" : 755.4300,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 151086.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 30.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 6000.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 145086.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 24.1810,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "GOOG",
+      "instrumentName" : "Google Inc.",
+      "lotId" : 440,
+      "lotCreationTime" : "2012-12-11T08:47:40.000-05:00",
+      "quantity" : 200,
+      "lastTrade" : {
+        "amount" : 755.4300,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 151086.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 30.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 6000.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 145086.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 24.1810
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "GS",
+    "instrumentName" : "Goldman Sachs Group Inc. (The)",
+    "quantity" : 500,
+    "lastTrade" : {
+      "amount" : 165.1200,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 82560.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 60.1100,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 30055.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 52505.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 1.7470,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "GS",
+      "instrumentName" : "Goldman Sachs Group Inc. (The)",
+      "lotId" : 438,
+      "lotCreationTime" : "2012-12-11T08:47:08.000-05:00",
+      "quantity" : 500,
+      "lastTrade" : {
+        "amount" : 165.1200,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 82560.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 60.1100,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 30055.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 52505.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 1.7470
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "K",
+    "instrumentName" : "Kellogg Company",
+    "quantity" : 500,
+    "lastTrade" : {
+      "amount" : 53.1500,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 26575.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 60.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 30000.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -3425.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.1142,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "K",
+      "instrumentName" : "Kellogg Company",
+      "lotId" : 453,
+      "lotCreationTime" : "2012-12-11T08:51:03.000-05:00",
+      "quantity" : 500,
+      "lastTrade" : {
+        "amount" : 53.1500,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 26575.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 60.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 30000.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -3425.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.1142
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "MSFT",
+    "instrumentName" : "Microsoft Corporation",
+    "quantity" : 200,
+    "lastTrade" : {
+      "amount" : 40,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 8000.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 40.1898,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 8037.95,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -37.95,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.0047,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "MSFT",
+      "instrumentName" : "Microsoft Corporation",
+      "lotId" : 434,
+      "lotCreationTime" : "2012-12-10T16:40:08.000-05:00",
+      "quantity" : 35,
+      "lastTrade" : {
+        "amount" : 40,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 1400.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 40.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 1400.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 0.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 0.0000
+    }, {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "MSFT",
+      "instrumentName" : "Microsoft Corporation",
+      "lotId" : 442,
+      "lotCreationTime" : "2012-12-11T08:48:25.000-05:00",
+      "quantity" : 165,
+      "lastTrade" : {
+        "amount" : 40,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 6600.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 40.2300,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 6637.95,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -37.95,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.0057
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "NU",
+    "instrumentName" : "Northeast Utilities",
+    "quantity" : 100,
+    "lastTrade" : {
+      "amount" : 33.6000,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 3360.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 76.0400,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 7604.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -4244.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.5581,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "NU",
+      "instrumentName" : "Northeast Utilities",
+      "lotId" : 460,
+      "lotCreationTime" : "2012-12-11T08:52:41.000-05:00",
+      "quantity" : 100,
+      "lastTrade" : {
+        "amount" : 33.6000,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 3360.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 76.0400,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 7604.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -4244.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.5581
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "RSH",
+    "instrumentName" : "Radioshack Corporation",
+    "quantity" : 500,
+    "lastTrade" : {
+      "amount" : 14.9900,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 7495.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 6.8400,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 3420.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : 4075.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : 1.1915,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "RSH",
+      "instrumentName" : "Radioshack Corporation",
+      "lotId" : 461,
+      "lotCreationTime" : "2012-12-11T08:52:50.000-05:00",
+      "quantity" : 500,
+      "lastTrade" : {
+        "amount" : 14.9900,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 7495.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 6.8400,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 3420.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : 4075.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : 1.1915
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "RTN",
+    "instrumentName" : "Raytheon Company",
+    "quantity" : 200,
+    "lastTrade" : {
+      "amount" : 51.2400,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 10248.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 76.2200,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 15244.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -4996.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.3277,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "RTN",
+      "instrumentName" : "Raytheon Company",
+      "lotId" : 458,
+      "lotCreationTime" : "2012-12-11T08:51:55.000-05:00",
+      "quantity" : 200,
+      "lastTrade" : {
+        "amount" : 51.2400,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 10248.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 76.2200,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 15244.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -4996.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.3277
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "URBN",
+    "instrumentName" : "Urban Outfitters Inc.",
+    "quantity" : 500,
+    "lastTrade" : {
+      "amount" : 37.4900,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 18745.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 40.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 20000.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -1255.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.0628,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "URBN",
+      "instrumentName" : "Urban Outfitters Inc.",
+      "lotId" : 463,
+      "lotCreationTime" : "2012-12-11T08:53:09.000-05:00",
+      "quantity" : 500,
+      "lastTrade" : {
+        "amount" : 37.4900,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 18745.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 40.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 20000.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -1255.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.0628
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "YHOO",
+    "instrumentName" : "Yahoo! Inc.",
+    "quantity" : 200,
+    "lastTrade" : {
+      "amount" : 16.0500,
+      "currency" : "USD"
+    },
+    "marketValue" : {
+      "amount" : 3210.00,
+      "currency" : "USD"
+    },
+    "pricePaid" : {
+      "amount" : 50.0000,
+      "currency" : "USD"
+    },
+    "totalCost" : {
+      "amount" : 10000.00,
+      "currency" : "USD"
+    },
+    "gain" : {
+      "amount" : -6790.00,
+      "currency" : "USD"
+    },
+    "gainPercent" : -0.6790,
+    "children" : [ {
+      "accountId" : 1532,
+      "accountName" : "Brokerage Account 1",
+      "instrumentSymbol" : "YHOO",
+      "instrumentName" : "Yahoo! Inc.",
+      "lotId" : 462,
+      "lotCreationTime" : "2012-12-11T08:52:59.000-05:00",
+      "quantity" : 200,
+      "lastTrade" : {
+        "amount" : 16.0500,
+        "currency" : "USD"
+      },
+      "marketValue" : {
+        "amount" : 3210.00,
+        "currency" : "USD"
+      },
+      "pricePaid" : {
+        "amount" : 50.0000,
+        "currency" : "USD"
+      },
+      "totalCost" : {
+        "amount" : 10000.00,
+        "currency" : "USD"
+      },
+      "gain" : {
+        "amount" : -6790.00,
+        "currency" : "USD"
+      },
+      "gainPercent" : -0.6790
+    } ]
+  }, {
+    "accountId" : 1532,
+    "accountName" : "Brokerage Account 1",
+    "instrumentSymbol" : "CASH",
+    "instrumentName" : "Cash",
+    "marketValue" : {
+      "amount" : 44664.00,
+      "currency" : "USD"
+    }
+  } ]
+}, {
+  "id" : 1534,
+  "name" : "Traditional IRA",
+  "cashPosition" : {
+    "amount" : 50000.00,
+    "currency" : "USD"
+  },
+  "marketValue" : {
+    "amount" : 50000.00,
+    "currency" : "USD"
+  },
+  "editPermission" : true,
+  "tradePermission" : true,
+  "transferPermission" : true,
+  "positions" : [ {
+    "accountId" : 1534,
+    "accountName" : "Traditional IRA",
+    "instrumentSymbol" : "CASH",
+    "instrumentName" : "Cash",
+    "marketValue" : {
+      "amount" : 50000.00,
+      "currency" : "USD"
+    }
+  } ]
+} ]
