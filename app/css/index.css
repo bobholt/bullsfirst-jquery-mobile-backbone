@@ -9,6 +9,6 @@
 
 /*-- Media queries. ---------------------------------------------------------*/
 
-@import "/app/css/narrow.css" screen and (max-width: 499px);
-@import "/app/css/medium.css" screen and (min-width: 500px);
-@import "/app/css/wide.css" screen and (min-width: 900px);
+@import "narrow.css" screen and (max-width: 499px);
+@import "medium.css" screen and (min-width: 500px);
+@import "wide.css" screen and (min-width: 900px);

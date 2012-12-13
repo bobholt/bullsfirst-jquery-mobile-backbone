@@ -117,7 +117,7 @@ define(
 
           chartView.drawChart();
 
-        }, 100);
+        }, 250);
 
       }
 

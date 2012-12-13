@@ -21,7 +21,7 @@ define(
 
     Module.AccountsCollection = Backbone.Collection.extend({
 
-      url: '/sample-data/sample.json'
+      url: 'sample-data/sample.json'
 
     });
 
