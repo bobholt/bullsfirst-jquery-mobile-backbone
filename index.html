@@ -21,7 +21,7 @@
   <section id="positions" data-role="page">
 
       <!-- //-beg- positions/header -->
-      <header data-role="header" id="positions-header">
+      <header data-role="header" class="gain-loss-header">
           <h1>Positions</h1>
           <a href="#home" class="ui-btn-right">Sign Out</a>
       </header>
@@ -34,7 +34,7 @@
       <!-- //-end- positions/content -->
 
       <!-- //-beg- positions/footer -->
-      <div id="positions-footer" data-role="footer" data-id="tabbar" data-position="fixed">
+      <div class="gain-loss-footer" data-role="footer" data-id="tabbar" data-position="fixed">
           <div data-role="navbar">
               <ul>
                   <li><a href="#positions" class="ui-btn-active ui-state-persist">Positions</a></li>
@@ -52,7 +52,7 @@
   <section id="accounts" data-role="page">
 
       <!-- //-beg- accounts/header -->
-      <header data-role="header">
+      <header data-role="header" class="gain-loss-header">
           <h1>Accounts</h1>
           <a href="#home" class="ui-btn-right">Sign Out</a>
       </header>
@@ -61,61 +61,11 @@
       <!-- //-beg- accounts/content -->
       <section id="accounts-section" data-role="content">
 
-          <div class="layout-info"><br />Window Size: <span class="window-size"></span></div>
-
-          <!-- //-beg- accounts-summary -->
-          <table id="accounts-summary">
-              <thead>
-                  <tr>
-                      <th>Current Market Value</th>
-                      <th>Total Investment</th>
-                      <th>Gain</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>$322,102</td>
-                      <td>$240,375</td>
-                      <td class='positive'>$81,727</td>
-                  </tr>
-              </tbody>
-          </table>
-          <!-- //-end- accounts-summary -->
-
-          <!-- //-beg- accounts-chart -->
-          <div id="accounts-chart" class="gain-loss-chart"></div>
-          <!-- //-end- accounts-chart -->
-
-          <!-- //-beg- accounts-table -->
-<!--            <div id="accounts-table-wrapper">
-              <div id="accounts-table-scroller">
-                  <table id="accounts-table">
-                      <thead>
-                          <tr>
-                              <th class="priority1 security">Security</th>
-                              <th class="priority2 symbol">Symbol</th>
-                              <th class="priority1 quantity">Quantity</th>
-                              <th class="priority1 last-trade">Last Trade</th>
-                              <th class="priority1 market-value">Market Value</th>
-                              <th class="priority2 price-paid">Price Paid</th>
-                              <th class="priority3 total-cost">Total Cost</th>
-                              <th class="priority3 gain">Gain</th>
-                              <th class="priority2 gain-percent">Gain %</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
--->
-          <!-- //-end- accounts-table -->
-
       </section>
       <!-- //-end- accounts/content -->
 
       <!-- //-beg- accounts/footer -->
-      <div data-role="footer" data-id="tabbar" data-position="fixed">
+      <div class="gain-loss-footer" data-role="footer" data-id="tabbar" data-position="fixed">
           <div data-role="navbar">
               <ul>
                   <li><a href="#positions">Positions</a></li>

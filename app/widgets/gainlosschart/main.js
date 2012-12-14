@@ -11,13 +11,13 @@ define(
 
   function(gainlosschartModule, app, E){
 
-    return function(chartData) {
+    return function(options) {
 
       var gainlosschartView = new gainlosschartModule.View({
 
-        collection: chartData
+        collection: options.chartData
 
-      }).render().placeAt('#positions-section');
+      }).render().placeAt(options.element);
 
       $(window).on('resize', $.proxy(gainlosschartView.drawChart, gainlosschartView));
 

@@ -11,19 +11,23 @@ define(
 
   function(loginformModule, app, E){
 
-    var loginformView = new loginformModule.View().render().placeAt('#home');
+    return function(options) {
 
-    E.subscribe('newPage', function() {
+      var loginformView = new loginformModule.View().render().placeAt(options.element);
 
-      loginformView.destroy();
+      E.subscribe('newPage', function() {
 
-    });
+        loginformView.destroy();
 
-    E.subscribe('newPage', function() {
+      });
 
-      loginformView.destroy();
+      E.subscribe('newPage', function() {
 
-    });
+        loginformView.destroy();
+
+      });
+
+    };
 
   }
 

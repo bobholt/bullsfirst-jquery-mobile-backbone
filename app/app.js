@@ -19,11 +19,38 @@ function(E) {
     // The root path to run the application.
     root: "/",
 
-    // The user object to attach user-specific data to
-    user: {
-      marketValue: 0,
-      totalCost: 0,
-      gain: 0
+    widgets: {
+
+      create: function(widgets) {
+
+        var args = [].slice.call(arguments, 1);
+
+        if (typeof widgets === 'string') {
+          widgets = [{
+            widget: widgets
+          }];
+        }
+
+        if (typeof widgets === 'object' && !Array.isArray(widgets)) {
+
+          widgets = [widgets];
+
+        }
+
+        _.each(widgets, function(widget, index) {
+
+          require([widget.widget + 'Main'], function(main) {
+
+            delete widget.widget;
+
+            main(widget);
+
+          });
+
+        });
+
+      }
+
     }
 
   };
@@ -44,79 +71,6 @@ function(E) {
   Handlebars.registerHelper('getSign', function(number) {
       return (number >= 0) ? 'positive' : 'negative';
   });
-
-
-    // function renderPage(accountsData) {
-
-    //     var accountsChartData = computeAccountsData(accountsData);
-    //     var positionsChartData = computePositionsData(accountsData);
-
-    //     // renderAccountsChart(accountsChartData);
-
-    //     function computeAccountsData(accountsData) {
-
-    //         var chartData = [];
-
-    //         $.each(accountsData, function(index, account) {
-
-    //             var accountData = {};
-
-    //             accountData.name = account.name;
-    //             accountData.symbol = account.name;
-    //             accountData.cashPosition = account.cashPosition.amount;
-    //             accountData.marketValue = account.marketValue.amount;
-    //             accountData.totalCost = 0;
-
-    //             $.each(account.positions, function (index, position) {
-
-    //                 if (position.totalCost) {
-
-    //                     accountData.totalCost += position.totalCost.amount;
-
-    //                 } else if (position.instrumentSymbol === "CASH") {
-
-    //                     accountData.totalCost += position.marketValue.amount;
-
-    //                 }
-
-    //             });
-
-    //             accountData.gain = accountData.marketValue = accountData.totalCost;
-    //             accountData.gainPercent = accountData.gain / accountData.totalCost * 100;
-
-    //             chartData.push(accountData);
-
-    //         });
-
-    //         return chartData.sort(function(a, b){
-
-    //             return b.gainPercent - a.gainPercent;
-
-    //         });
-
-    //     }
-
-    //     function renderAccountsChart(accountsChartData) {
-
-    //         // Render chart
-    //         var accountsGainLossChart = new GLChart('#accounts-chart', accountsChartData);
-
-    //         // Render chart whenever the positions page shows
-    //         // This is required because SVG does not show when app loads due to display:none
-    //         $('#accounts').on('pageshow', $.proxy(accountsGainLossChart.render, accountsGainLossChart));
-
-    //         $(window).resize($.proxy(accountsGainLossChart.render, accountsGainLossChart));
-
-    //         // Render the chart
-    //         // This is required in the case when positions page is loaded directly using a bookmark
-    //         // In this case a 'pageshow' event is not fired
-    //         accountsGainLossChart.render();
-
-    //         return accountsGainLossChart;
-
-    //     }
-
-    // }
 
   return app;
 

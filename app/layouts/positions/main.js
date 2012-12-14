@@ -32,52 +32,53 @@ define(
 
           var duplicateIndex = nameArray.indexOf(position.instrumentSymbol);
           var chartItem = chartData[duplicateIndex];
+          var newPosition = {};
 
-          position.name = position.instrumentName;
-          position.symbol = position.instrumentSymbol;
-          position.marketValue = position.marketValue.amount;
+          newPosition.quantity = position.quantity;
+          newPosition.name = position.instrumentName;
+          newPosition.symbol = position.instrumentSymbol;
+          newPosition.marketValue = position.marketValue.amount;
 
           if (position.totalCost) {
 
-              position.lastTrade = position.lastTrade.amount;
-              position.pricePaid = position.pricePaid.amount;
-              position.totalCost = position.totalCost.amount;
-              position.cashPosition = 0;
+              newPosition.lastTrade = position.lastTrade.amount;
+              newPosition.pricePaid = position.pricePaid.amount;
+              newPosition.totalCost = position.totalCost.amount;
+              newPosition.cashPosition = 0;
 
           } else if (position.instrumentSymbol === "CASH") {
 
-              position.totalCost = position.marketValue;
-              position.cashPosition = position.marketValue;
-              position.quantity = position.marketValue;
-              position.lastTrade = 1;
-              position.pricePaid = 1;
+              newPosition.totalCost = position.marketValue.amount;
+              newPosition.cashPosition = position.marketValue.amount;
+              newPosition.quantity = position.marketValue.amount;
+              newPosition.lastTrade = 1;
+              newPosition.pricePaid = 1;
 
           }
 
-          position.gain = position.marketValue - position.totalCost;
-          position.gainPercent = (position.gain/position.totalCost) * 100;
-
+          newPosition.gain = newPosition.marketValue - newPosition.totalCost;
+          newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
 
           if (duplicateIndex === -1) {
 
-              chartData.push(position);
+              chartData.push(newPosition);
               nameArray.push(position.instrumentSymbol);
 
           } else {
 
-              chartItem.marketValue += position.marketValue;
-              chartItem.totalCost += position.totalCost;
-              chartItem.cashPosition += position.cashPosition;
-              chartItem.quantity += position.quantity;
+              chartItem.marketValue += newPosition.marketValue;
+              chartItem.totalCost += newPosition.totalCost;
+              chartItem.cashPosition += newPosition.cashPosition;
+              chartItem.quantity += newPosition.quantity;
 
-              chartItem.gain += position.gain;
+              chartItem.gain += newPosition.gain;
               chartItem.gainPercent = chartItem.gain / chartItem.totalCost * 100;
 
           }
 
       });
 
-      return chartData.sort(function(a, b){
+      return chartData.sort(function(a, b) {
 
         return b.gainPercent - a.gainPercent;
 

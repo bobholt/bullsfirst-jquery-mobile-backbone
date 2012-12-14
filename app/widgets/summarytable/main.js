@@ -11,27 +11,31 @@ define(
 
   function(summarytableModule, app, E){
 
-    var userModel = app.userModel;
+    return function(options) {
 
-    var summarytableModel = new summarytableModule.Model({
+      var userModel = app.userModel;
 
-      marketValue: userModel.get('marketValue'),
-      totalCost: userModel.get('totalCost'),
-      gain: userModel.get('gain')
+      var summarytableModel = new summarytableModule.Model({
 
-    });
+        marketValue: userModel.get('marketValue'),
+        totalCost: userModel.get('totalCost'),
+        gain: userModel.get('gain')
 
-    var summarytableView = new summarytableModule.View({
+      });
 
-      model: summarytableModel
+      var summarytableView = new summarytableModule.View({
 
-    }).render().placeAt('#positions-section');
+        model: summarytableModel
 
-    E.subscribe('newPage', function() {
+      }).render().placeAt(options.element);
 
-      summarytableView.destroy();
+      E.subscribe('newPage', function() {
 
-    });
+        summarytableView.destroy();
+
+      });
+
+    };
 
   }
 

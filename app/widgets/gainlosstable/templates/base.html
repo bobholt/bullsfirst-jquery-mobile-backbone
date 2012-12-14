@@ -1,30 +1,33 @@
-<div id="positions-table-scroller">
-  <table id="positions-table">
+<div class="gain-loss-table-scroller">
+  <table class="gain-loss-table">
     <thead>
       <tr>
-        <th class="priority1 security">Security</th>
-        <th class="priority2 symbol">Symbol</th>
-        <th class="priority1 quantity">Quantity</th>
-        <th class="priority1 last-trade">Last Trade</th>
-        <th class="priority1 market-value">Market Value</th>
-        <th class="priority2 price-paid">Price Paid</th>
-        <th class="priority3 total-cost">Total Cost</th>
-        <th class="priority3 gain">Gain</th>
-        <th class="priority2 gain-percent">Gain %</th>
+        <th class="accounts priority1 account">Account</th>
+        <th class="positions priority1 security">Security</th>
+        <th class="positions priority2 symbol">Symbol</th>
+        <th class="positions priority1 quantity">Quantity</th>
+        <th class="positions priority1 last-trade">Last Trade</th>
+        <th class="positions accounts priority1 market-value">Market Value</th>
+        <th class="positions priority2 price-paid">Price Paid</th>
+        <th class="positions priority3 total-cost">Total Cost</th>
+        <th class="positions accounts priority3 gain">Gain</th>
+        <th class="positions accounts priority2 gain-percent">Gain %</th>
+        <th class="accounts priority1 cash">Cash</th>
       </tr>
     </thead>
     <tbody>
-      {{#each chartData}}
+      {{#each tableData}}
         <tr>
-          <td class="priority1 security">{{this.instrumentName}}}</td>
-          <td class="priority2 symbol">{{this.instrumentSymbol}}</td>
-          <td class="priority1 quantity">{{this.quantity}}</td>
-          <td class="priority1 last-trade">{{formatMoney this.lastTrade}}</td>
-          <td class="priority1 market-value">{{formatMoney this.marketValue}}</td>
-          <td class="priority2 price-paid">{{formatMoney this.pricePaid}}</td>
-          <td class="priority3 total-cost">{{formatMoney this.totalCost}}</td>
-          <td class="priority3 gain {{getSign gain}}">{{formatMoney this.gain}}</td>
-          <td class="priority2 gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
+          <td class="positions accounts priority1 account">{{this.name}}</td>
+          <td class="positions priority2 symbol">{{this.symbol}}</td>
+          <td class="positions priority1 quantity">{{this.quantity}}</td>
+          <td class="positions priority1 last-trade">{{formatMoney this.lastTrade}}</td>
+          <td class="positions accounts priority1 market-value">{{formatMoney this.marketValue}}</td>
+          <td class="positions priority2 price-paid">{{formatMoney this.pricePaid}}</td>
+          <td class="positions priority3 total-cost">{{formatMoney this.totalCost}}</td>
+          <td class="positions accounts priority3 gain {{getSign gain}}">{{formatMoney this.gain}}</td>
+          <td class="positions accounts priority2 gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
+          <td class="accounts priority1 cash">{{formatMoney this.cashPosition}}</td>
         </tr>
       {{/each}}
       <!-- Table Rows Go Here -->

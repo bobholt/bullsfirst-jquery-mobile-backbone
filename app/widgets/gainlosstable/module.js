@@ -23,7 +23,7 @@ define(
 
     Module.View = Backbone.SuperView.extend({
 
-      id: 'positions-table-wrapper',
+      className: 'gain-loss-table-wrapper',
 
       template: baseTemplate,
 
@@ -32,16 +32,16 @@ define(
         var tableView = this;
 
         // Fit table on resize events
-        var headerHeight = $('#positions-header').outerHeight(true);
-        var summaryHeight = $('#positions-summary').outerHeight(true);
-        var chartHeight = $('.gain-loss-chart').outerHeight(true);
+        var headerHeight = $('.gain-loss-header:visible').outerHeight(true);
+        var summaryHeight = $('.summary-table:visible').outerHeight(true);
+        var chartHeight = $('.gain-loss-chart:visible').outerHeight(true);
         var topHeight = headerHeight + summaryHeight + chartHeight;
-        var footerHeight = $('#positions-footer').outerHeight(true);
+        var footerHeight = $('.gain-loss-footer:visible').outerHeight(true);
         var fixedSectionsHeight = topHeight + footerHeight;
 
         var winHeight = $(window).height();
 
-        $('#positions-table-wrapper').height(winHeight - fixedSectionsHeight);
+        this.$el.height(winHeight - fixedSectionsHeight);
 
         setTimeout(function() {
 
@@ -57,7 +57,7 @@ define(
 
         // Setup iScroll
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-        this.myScroll = new iScroll('positions-table-wrapper');
+        this.myScroll = new iScroll(tableView.options.id);
 
         setTimeout(function() {
 

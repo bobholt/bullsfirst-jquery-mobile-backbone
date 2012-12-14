@@ -46,12 +46,9 @@ define(
         // Should check username/password on the server here
         // For demonstration, just pass through
         // Load in the user's data
-        require(['userMain'], function() {
-
-          app.isLoggedIn = true;
-
-          app.router.navigate(e.currentTarget.href, {trigger: true});
-
+        app.widgets.create({
+          widget: 'user',
+          href: e.currentTarget.href
         });
 
       },

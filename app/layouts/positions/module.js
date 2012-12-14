@@ -1,13 +1,15 @@
 define(
   [
 
+    'app',
+
     'backbone',
 
     'superview'
 
   ],
 
-  function(){
+  function(app){
 
     var Module = {};
 
@@ -25,17 +27,27 @@ define(
 
         var positionsView = this;
 
-        require([
-          'layoutinfoMain',
-          'summarytableMain',
-          'gainlosschartMain',
-          'gainlosstableMain'
-        ], function(layoutinfo, summarytable, gainlosschart, gainlosstable) {
-
-          gainlosschart(positionsView.collection);
-          gainlosstable(positionsView.collection);
-
-        });
+        app.widgets.create([
+          {
+            widget: 'layoutinfo',
+            element: '#positions-section'
+          },
+          {
+            widget: 'summarytable',
+            element: '#positions-section'
+          },
+          {
+            widget: 'gainlosschart',
+            chartData: positionsView.collection,
+            element: '#positions-section'
+          },
+          {
+            widget: 'gainlosstable',
+            tableData: positionsView.collection,
+            element: '#positions-section',
+            tableWrapperId: 'positions-table-wrapper'
+          }
+        ]);
 
       }
 

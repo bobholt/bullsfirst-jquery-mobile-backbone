@@ -23,7 +23,7 @@ define(
 
       tagName: 'table',
 
-      id: "positions-summary",
+      className: "summary-table",
 
       template: baseTemplate
 

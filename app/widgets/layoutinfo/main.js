@@ -11,15 +11,19 @@ define(
 
   function(layoutinfoModule, app, E){
 
-    var layoutinfoView = new layoutinfoModule.View().render().placeAt('#positions-section');
+    return function(options) {
 
-    $(window).on('resize', $.proxy(layoutinfoView.displayWindowSize, layoutinfoView));
+      var layoutinfoView = new layoutinfoModule.View().render().placeAt(options.element);
 
-    E.subscribe('newPage', function() {
+      $(window).on('resize', $.proxy(layoutinfoView.displayWindowSize, layoutinfoView));
 
-      layoutinfoView.destroy();
+      E.subscribe('newPage', function() {
 
-    });
+        layoutinfoView.destroy();
+
+      });
+
+    };
 
   }
 

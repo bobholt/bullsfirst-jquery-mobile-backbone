@@ -24,35 +24,35 @@
 }
 
 /* -----------------------------------------------------------------------------
- * Positions Page
+ * Interface
  * -------------------------------------------------------------------------- */
-#positions .ui-bar-a {
+.ui-bar-a {
     background: #F89F20;
     text-shadow: none;
 }
 
 /* -----------------------------------------------------------------------------
- * Positions Page - Summary
+ * Summary
  * -------------------------------------------------------------------------- */
-#positions-summary {
+.summary-table {
     width: 320px;
     float: right;
 }
 
-#positions-summary th {
+.summary-table th {
     color: #676767;
     font-size: 10px;
     text-align: center;
 }
 
-#positions-summary td {
+.summary-table td {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
 }
 
 /* -----------------------------------------------------------------------------
- * Positions Page - Chart
+ * Gain/Loss Chart
  * -------------------------------------------------------------------------- */
 .gain-loss-chart {
     clear: both;
@@ -62,10 +62,10 @@
 }
 
 /* -----------------------------------------------------------------------------
- * Positions Page - Table
+ * Gain/Loss Table
  * -------------------------------------------------------------------------- */
 /* Following styles are required by iScroll, otherwise scroller will not work */
-#positions-table-wrapper {
+.gain-loss-table-wrapper {
     left: 0;
     overflow: auto;
     position: absolute;
@@ -74,68 +74,61 @@
 }
 
 /* Following styles are required by iScroll, otherwise scroller will not work */
-#positions-table-scroller {
+.gain-loss-table-scroller {
     width: 100%;
     padding: 0;
     position: absolute;
     z-index: 1;
 }
 
-#positions-table {
+.gain-loss-table {
     border-spacing: 0;
     padding: 0 15px;
     width: 100%;
 }
 
-#positions-table thead tr {
+.gain-loss-table thead tr {
     background-color: #B2B2B2;
     height: 23px;
 }
 
-#positions-table th {
+.gain-loss-table th {
     color: #FFFFFF;
     font-size: 12px;
     text-shadow: none;
+    display: none;
+    text-align: right;
 }
 
-#positions-table td {
+.gain-loss-table td {
     border-bottom: solid 1px #B2B2B2;
     font-size: 12px;
     height: 23px;
+    display: none;
+    text-align: right;
 }
 
-#positions-table .security {
+.gain-loss-table .account,
+.gain-loss-table .security {
     text-align: left;
 }
 
-#positions-table .symbol {
+.gain-loss-table .symbol {
     text-align: center;
 }
 
-#positions-table .quantity {
-    text-align: right;
+/* -----------------------------------------------------------------------------
+ * Positions Page
+ * -------------------------------------------------------------------------- */
+#positions .gain-loss-table td.positions,
+#positions .gain-loss-table th.positions {
+  display: table-cell;
 }
 
-#positions-table .last-trade {
-    text-align: right;
-}
-
-#positions-table .market-value {
-    text-align: right;
-}
-
-#positions-table .price-paid {
-    text-align: right;
-}
-
-#positions-table .total-cost {
-    text-align: right;
-}
-
-#positions-table .gain {
-    text-align: right;
-}
-
-#positions-table .gain-percent {
-    text-align: right;
+/* -----------------------------------------------------------------------------
+ * Accounts Page
+ * -------------------------------------------------------------------------- */
+#accounts .gain-loss-table td.accounts,
+#accounts .gain-loss-table th.accounts {
+  display: table-cell;
 }

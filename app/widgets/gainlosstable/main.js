@@ -11,19 +11,21 @@ define(
 
   function(gainlosstableModule, app, E){
 
-    return function(chartData) {
+    return function(options) {
 
       var gainlosstableModel = new gainlosstableModule.Model({
 
-        chartData: chartData.toJSON()
+        tableData: options.tableData.toJSON()
 
       });
 
       var gainlosstableView = new gainlosstableModule.View({
 
-        model: gainlosstableModel
+        model: gainlosstableModel,
+        scrollElement: options.scrollElement,
+        id: options.tableWrapperId
 
-      }).render().placeAt('#positions-section');
+      }).render().placeAt(options.element);
 
       $(window).on('resize', $.proxy(gainlosstableView.fitTable, gainlosstableView));
 

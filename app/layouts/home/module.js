@@ -1,13 +1,15 @@
 define(
   [
 
+    'app',
+
     'backbone',
 
     'superview'
 
   ],
 
-  function(){
+  function(app){
 
     var Module = {};
 
@@ -19,7 +21,10 @@ define(
 
       postRender: function() {
 
-        require(['loginformMain']);
+        app.widgets.create({
+          widget: 'loginform',
+          element: '#home'
+        });
 
       },
 

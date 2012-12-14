@@ -23,7 +23,7 @@ define(
 
         var chartView = this;
 
-        chartView.chart = new Raphael(chartView.el, chartView.$el.width(), chartView.$el.height());
+        chartView.paper = new Raphael(chartView.el, chartView.$el.width(), chartView.$el.height());
 
       },
 
@@ -31,7 +31,7 @@ define(
 
         var chartView = this;
 
-        var chart = chartView.chart;
+        var paper = chartView.paper;
 
         var chartData = chartView.collection;
 
@@ -59,8 +59,8 @@ define(
 
         });
 
-        chart.setSize(chartWidth, chartHeight);
-        chart.clear();
+        paper.setSize(chartWidth, chartHeight);
+        paper.clear();
 
         // Draw chartData
         chartData.each(function(position, index) {
@@ -75,13 +75,13 @@ define(
 
               // Draw the gain bar
               height = Math.round((gainPercent/100) * (chartHeight/2));
-              chart.rect(nextX, (chartHeight/2) - height, positionWidth, height).attr({'stroke-width': 0, 'fill': colorGain});
+              paper.rect(nextX, (chartHeight/2) - height, positionWidth, height).attr({'stroke-width': 0, 'fill': colorGain});
 
             }
 
             // Draw the investment bar
             var color = (position.get('symbol') === 'CASH') ? colorCash : colorInvestment;
-            chart.rect(nextX, chartHeight/2, positionWidth, chartHeight/2).attr({'stroke-width': 0, 'fill': color});
+            paper.rect(nextX, chartHeight/2, positionWidth, chartHeight/2).attr({'stroke-width': 0, 'fill': color});
 
           }
 
@@ -89,10 +89,10 @@ define(
 
             // Draw the loss bar
             height = Math.round((-gainPercent/100) * (chartHeight/2));
-            chart.rect(nextX, (chartHeight/2), positionWidth, (chartHeight/2) + height).attr({'stroke-width': 0, 'fill': colorLoss});
+            paper.rect(nextX, (chartHeight/2), positionWidth, (chartHeight/2) + height).attr({'stroke-width': 0, 'fill': colorLoss});
 
             // Draw the remaining investmet bar
-            chart.rect(nextX, chartHeight/2 + height, positionWidth, chartHeight).attr({'stroke-width': 0, 'fill': colorInvestment});
+            paper.rect(nextX, chartHeight/2 + height, positionWidth, chartHeight).attr({'stroke-width': 0, 'fill': colorInvestment});
 
           }
 
@@ -100,7 +100,7 @@ define(
 
         });
 
-        this.chart = chart;
+        this.paper = paper;
 
       },
 
