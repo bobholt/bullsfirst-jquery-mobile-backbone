@@ -7,5 +7,5 @@
  * Table column priorities
  * -------------------------------------------------------------------------- */
 /* .priority1 { display: table-cell; } */  /* this is the default */
-.priority2 { display: none; }
-.priority3 { display: none; }
+.priority2 { display: none !important; } /* hate important, but this is a leaf node with strong opponent style */
+.priority3 { display: none !important; } /* hate important, but this is a leaf node with strong opponent style */

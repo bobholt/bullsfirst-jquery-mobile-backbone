@@ -12,6 +12,8 @@ define([
 
 function(app, E) {
 
+  var redrawTimeout = null;
+
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
 
@@ -42,8 +44,6 @@ function(app, E) {
 
     goToPage: function(page) {
 
-      E.publish('newPage');
-
       if (app.isLoggedIn) {
 
         require([page + 'Main'], function(main) {
@@ -61,6 +61,12 @@ function(app, E) {
         });
 
       }
+
+      redrawTimeout = setTimeout(function() {
+
+        E.publish('refreshChart');
+
+      }, 200);
 
     }
 

@@ -10,5 +10,5 @@
 /*-- Media queries. ---------------------------------------------------------*/
 
 @import "narrow.css" screen and (max-width: 499px);
-@import "medium.css" screen and (min-width: 500px);
+@import "medium.css" screen and (min-width: 500px) and (max-width: 899px);
 @import "wide.css" screen and (min-width: 900px);

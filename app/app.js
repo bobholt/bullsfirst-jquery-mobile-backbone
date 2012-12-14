@@ -41,13 +41,17 @@ function(E) {
 
           require([widget.widget + 'Main'], function(main) {
 
-            delete widget.widget;
-
             main(widget);
 
           });
 
         });
+
+      },
+
+      destroy: function(widget) {
+
+        require.undef(widget + 'Main');
 
       }
 

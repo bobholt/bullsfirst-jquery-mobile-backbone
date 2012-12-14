@@ -17,12 +17,6 @@ define(
 
       $(window).on('resize', $.proxy(layoutinfoView.displayWindowSize, layoutinfoView));
 
-      E.subscribe('newPage', function() {
-
-        layoutinfoView.destroy();
-
-      });
-
     };
 
   }

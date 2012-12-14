@@ -86,12 +86,6 @@ define(
 
     }
 
-    // E.subscribe('newPage', function() {
-
-    //   positionsView.destroy();
-
-    // });
-
   }
 
 );

@@ -8,4 +8,4 @@
  * -------------------------------------------------------------------------- */
 /* .priority1 { display: table-cell; } */  /* this is the default */
 /* .priority2 { display: table-cell; } */  /* this is the default */
-.priority3 { display: none; }
+.priority3 { display: none !important; } /* hate important, but this is a leaf node with strong opponent style */

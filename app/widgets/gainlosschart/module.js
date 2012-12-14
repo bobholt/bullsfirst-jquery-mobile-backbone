@@ -29,6 +29,8 @@ define(
 
       drawChart: function() {
 
+        console.log('draw');
+
         var chartView = this;
 
         var paper = chartView.paper;

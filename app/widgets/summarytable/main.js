@@ -29,12 +29,6 @@ define(
 
       }).render().placeAt(options.element);
 
-      E.subscribe('newPage', function() {
-
-        summarytableView.destroy();
-
-      });
-
     };
 
   }

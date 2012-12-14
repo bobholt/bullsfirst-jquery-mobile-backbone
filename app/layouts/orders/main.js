@@ -15,12 +15,6 @@ define(
 
     }).render();
 
-    // E.subscribe('newPage', function() {
-
-    //   ordersView.destroy();
-
-    // });
-
   }
 
 );

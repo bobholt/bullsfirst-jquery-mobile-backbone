@@ -21,9 +21,13 @@ define(
 
       $(window).on('resize', $.proxy(gainlosschartView.drawChart, gainlosschartView));
 
-      E.subscribe('newPage', function() {
+      E.subscribe('refreshChart', function() {
 
-        gainlosschartView.destroy();
+        if (gainlosschartView.$el.is(':visible')) {
+
+          gainlosschartView.drawChart();
+
+        }
 
       });
 
