@@ -17,15 +17,9 @@ define(
 
     Module.View = Backbone.SuperView.extend({
 
-      tagName: 'section',
+      tagName: 'form',
 
-      id: 'login-section',
-
-      attributes: {
-        'data-role': 'content'
-      },
-
-      className: 'ui-content',
+      id: 'login-form',
 
       template: baseTemplate,
 

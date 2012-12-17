@@ -23,7 +23,7 @@ define(
 
         app.widgets.create({
           widget: 'loginform',
-          element: '#home'
+          element: '#login-section'
         });
 
       },

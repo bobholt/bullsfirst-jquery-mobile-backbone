@@ -1,7 +1,8 @@
 /*-- jQuery Mobile. ---------------------------------------------------------*/
 
+@import "../../libs/css/normalize.css";
 @import "../../libs/css/jquery.mobile.structure-1.1.1.min.css";
-@import "../../libs/css/bullsfirst.css";
+/*@import "../../libs/css/bullsfirst.css";*/
 
 /*-- Application stylesheets. -----------------------------------------------*/
 

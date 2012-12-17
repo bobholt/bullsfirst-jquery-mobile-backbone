@@ -1,3 +1,54 @@
+/* apply a natural box layout model to all elements
+/* see: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+}
+
+h2, h3 {
+  margin: 0;
+  height: auto;
+  font-size: 1em;
+  line-height: 1em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+a {
+  color: #EF4423;
+  text-decoration: none;
+}
+
+input,
+input.ui-input-text {
+  border: none;
+  font-size: 0.75em; /* 12 / 16 = 0.75 */
+  margin: 0 0 0.8333333333em 0; /* 10 / 12 = 0.8333333333 */
+  min-width: 6.6666666667em; /* 80 / 12 = 6.6666666667 */
+}
+
+label,
+label.ui-input-text {
+  background: #656565;
+  color: #F7E4C8;
+  font-size: 0.625em; /* 10 / 16 = 0.625 */
+  height: 2.5em; /* 25 / 10 = 2.5 */
+  line-height: 2.5em;
+  margin: 0;
+  padding-left: .8em; /* 8 / 10 = 0.8 */
+  width: 8em; /* 80 / 10 = 8 */
+}
+
+body > section {
+  height: 100%;
+  width: 100%;
+}
+
 /* -----------------------------------------------------------------------------
  * Colors
  * -------------------------------------------------------------------------- */
@@ -7,7 +58,7 @@
 }
 
 .positive {
-    color: #F89F20;
+    color: #F79F1E;
 }
 
 .negative {
@@ -27,7 +78,7 @@
  * Interface
  * -------------------------------------------------------------------------- */
 .ui-bar-a {
-    background: #F89F20;
+    background: #F79F1E;
     text-shadow: none;
 }
 
@@ -118,6 +169,86 @@
 }
 
 /* -----------------------------------------------------------------------------
+ * Home Page
+ * -------------------------------------------------------------------------- */
+#home {
+  background: #404040;
+  padding: 0.5em 0 2.25em; /* 4 / 16 = 0.25 */
+}
+
+.login-wrapper {
+  background: #F79F1E;
+  font-size: 1em; /* 16 */
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 0.375em; /* 6 / 16 = 0.375 */
+  width: 97.5%; /* 312 / 320 = 0.975 */
+}
+
+.logo {
+  margin-top: .375em; /* 6 / 16 = 0.375 */
+}
+
+.logo img {
+  margin: 0 0 1.9375em 5.769230769%; /* 31 / 16 = 1.9375; 18 / 312 = 0.05769230769 */
+  width: 51.6025641%; /* 161 / 312 = 0.516025641 */
+}
+
+h3.subhead {
+  font: normal normal normal 0.875em/1em sans-serif; /* 14 / 19 = 0.875 */
+  margin-left: 14.74358974%; /* 46 / 312 = 0.1474358974 */
+  margin-bottom: 2.2857142857em; /* 32 / 14 = 2.2857142857 */
+}
+
+#login-section {
+  background: #404040;
+  font-size: 1em; /* 16 */
+  margin: 0 auto;
+  padding: 0.375em 0.875em; /* 6 / 16 = 0.375; 14 / 16 = 0.875 */
+  width: 96.15384615%; /* 300 / 312 = 0.9615384615 */
+}
+
+#login-section h1 {
+  color: #fff;
+  font: bold normal normal 0.875em/1em sans-serif;
+  margin: 0 0 1.4285714286em 0; /* 14 / 20 = 1.4285714286 */
+}
+
+#login-form {
+  width: 100%;
+}
+
+#l-login-button {
+  background: #EF4423;
+  color: #fff;
+  display: block;
+  font-size: 0.75em; /* 12 / 16 = 0.75 */;
+  margin: 1.6666666667em auto; /* 20 / 12 = 1.6666666667 */
+  min-width: 5em; /* 60 / 12 = 5 */
+  padding: 1.1666666667em; /* 14 / 12 = 1.1666666667 */
+  width: 33.33333333%; /* 100 / 300  = 0.3333333333 */
+}
+
+.login-icon {
+  margin-bottom: 0.5em; /* 6 / 12 = 0.5 */
+}
+
+.open-account {
+  text-align: center;
+  font-size: 0.875em; /* 14 / 16 = 0.875 */
+}
+
+.open-account img {
+  vertical-align: middle;
+}
+
+.disclaimer p {
+  color: #fff;
+  font: normal normal normal 0.625em/1.25em sans-serif;
+  margin: 0.2em 0 0 0.6em;
+}
+
+ /* -----------------------------------------------------------------------------
  * Positions Page
  * -------------------------------------------------------------------------- */
 #positions .gain-loss-table td.positions,
