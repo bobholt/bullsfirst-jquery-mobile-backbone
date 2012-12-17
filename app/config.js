@@ -44,6 +44,8 @@ require.config({
     // Widgets
     gainlosschartMain:    "widgets/gainlosschart/main",
     gainlosschartModule:  "widgets/gainlosschart/module",
+    gainlossfooterMain:   "widgets/gainlossfooter/main",
+    gainlossfooterModule: "widgets/gainlossfooter/module",
     gainlosstableMain:    "widgets/gainlosstable/main",
     gainlosstableModule:  "widgets/gainlosstable/module",
     layoutinfoMain:       "widgets/layoutinfo/main",

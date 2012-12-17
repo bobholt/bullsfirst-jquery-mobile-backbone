@@ -29,8 +29,6 @@ define(
 
       drawChart: function() {
 
-        console.log('draw');
-
         var chartView = this;
 
         var paper = chartView.paper;
@@ -41,7 +39,7 @@ define(
         var colorGain = '#F89F20';
         var colorLoss = '#EF4723';
         var colorCash = '#C4C4C4';
-        var gapWidth = 2;
+        var gapWidth = 1;
 
         var numGaps = chartData.length - 1;
 

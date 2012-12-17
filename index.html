@@ -43,62 +43,98 @@
   <!-- //-end- home -->
 
   <!-- //-beg- positions -->
-  <section id="positions" data-role="page">
+  <section id="positions" data-role="page" class="gain-loss-page">
 
       <!-- //-beg- positions/header -->
       <header data-role="header" class="gain-loss-header">
-          <h1>Positions</h1>
-          <a href="#home" class="ui-btn-right">Sign Out</a>
+        <img class="logo-header" src="app/img/logo_small.png" alt="Bullsfirst">
+
+        <menu>
+          <ul>
+            <li data-role="button"><a href="#">Trade</a></li>
+            <li data-role="button"><a href="#">Transfer</a></li>
+            <li data-role="button"><a href="#"><img src="app/img/icon_menu.png" /></a></li>
+          </ul>
+        </menu>
       </header>
       <!-- //-end- positions/header -->
 
       <!-- //-beg- positions/content -->
       <section id="positions-section" data-role="content">
 
+        <header>
+
+          <h1>Positions</h1>
+
+          <menu class="chart-table-menu">
+            <ul>
+              <li class="chart-select"></li>
+              <li class="table-select"></li>
+            </ul>
+          </menu>
+
+        </header>
+        <div id="positions-summary-wrapper"></div>
+
+        <div id="positions-chart-wrapper" class="gain-loss-chart-wrapper"></div>
+
       </section>
       <!-- //-end- positions/content -->
 
       <!-- //-beg- positions/footer -->
-      <div class="gain-loss-footer" data-role="footer" data-id="tabbar" data-position="fixed">
-          <div data-role="navbar">
-              <ul>
-                  <li><a href="#positions" class="ui-btn-active ui-state-persist">Positions</a></li>
-                  <li><a href="#accounts">Accounts</a></li>
-                  <li><a href="#orders">Orders</a></li>
-                  <li><a href="#transactions">Transactions</a></li>
-              </ul>
-          </div>
+      <div class="gain-loss-footer" id="positions-footer" data-role="footer" data-id="tabbar" data-position="fixed">
+        <div data-role="navbar">
+        </div>
       </div>
       <!-- //-end- positions/footer -->
+
   </section>
   <!-- //-end- positions -->
 
   <!-- //-beg- accounts -->
-  <section id="accounts" data-role="page">
+  <section id="accounts" data-role="page" class="gain-loss-page">
 
       <!-- //-beg- accounts/header -->
       <header data-role="header" class="gain-loss-header">
-          <h1>Accounts</h1>
-          <a href="#home" class="ui-btn-right">Sign Out</a>
+        <img class="logo-header" src="app/img/logo_small.png" alt="Bullsfirst">
+
+        <menu>
+          <ul>
+            <li data-role="button"><a href="#">Trade</a></li>
+            <li data-role="button"><a href="#">Transfer</a></li>
+            <li data-role="button"><a href="#"><img src="app/img/icon_menu.png" /></a></li>
+          </ul>
+        </menu>
       </header>
       <!-- //-end- accounts/header -->
 
       <!-- //-beg- accounts/content -->
       <section id="accounts-section" data-role="content">
 
+        <header>
+
+          <h1>Accounts</h1>
+
+          <menu class="chart-table-menu">
+            <ul>
+              <li class="chart-select"></li>
+              <li class="table-select"></li>
+            </ul>
+          </menu>
+
+        </header>
+
+        <div id="accounts-summary-wrapper"></div>
+
+        <div id="accounts-chart-wrapper" class="gain-loss-chart-wrapper"></div>
+
       </section>
       <!-- //-end- accounts/content -->
 
       <!-- //-beg- accounts/footer -->
-      <div class="gain-loss-footer" data-role="footer" data-id="tabbar" data-position="fixed">
-          <div data-role="navbar">
-              <ul>
-                  <li><a href="#positions">Positions</a></li>
-                  <li><a href="#accounts" class="ui-btn-active ui-state-persist">Accounts</a></li>
-                  <li><a href="#orders">Orders</a></li>
-                  <li><a href="#transactions">Transactions</a></li>
-              </ul>
-          </div>
+      <div class="gain-loss-footer" id="accounts-footer" data-role="footer" data-id="tabbar" data-position="fixed">
+        <div data-role="navbar">
+        </div>
       </div>
       <!-- //-end- accounts/footer -->
   </section>
@@ -121,15 +157,9 @@
       <!-- //-end- orders/content -->
 
       <!-- //-beg- orders/footer -->
-      <div data-role="footer" data-id="tabbar" data-position="fixed">
-          <div data-role="navbar">
-              <ul>
-                  <li><a href="#positions">Positions</a></li>
-                  <li><a href="#accounts">Accounts</a></li>
-                  <li><a href="#orders" class="ui-btn-active ui-state-persist">Orders</a></li>
-                  <li><a href="#transactions">Transactions</a></li>
-              </ul>
-          </div>
+      <div class="gain-loss-footer" id="orders-footer" data-role="footer" data-id="tabbar" data-position="fixed">
+        <div data-role="navbar">
+        </div>
       </div>
       <!-- //-end- orders/footer -->
   </section>
@@ -152,15 +182,9 @@
       <!-- //-end- transactions/content -->
 
       <!-- //-beg- transactions/footer -->
-      <div data-role="footer" data-id="tabbar" data-position="fixed">
-          <div data-role="navbar">
-              <ul>
-                  <li><a href="#positions">Positions</a></li>
-                  <li><a href="#accounts">Accounts</a></li>
-                  <li><a href="#orders">Orders</a></li>
-                  <li><a href="#transactions" class="ui-btn-active ui-state-persist">Transactions</a></li>
-              </ul>
-          </div>
+      <div class="gain-loss-footer" id="transactions-footer" data-role="footer" data-id="tabbar" data-position="fixed">
+        <div data-role="navbar">
+        </div>
       </div>
       <!-- //-end- accounts/footer -->
   </section>

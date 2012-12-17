@@ -65,6 +65,16 @@ define(
 
         }, 100);
 
+      },
+
+      showTable: function() {
+        var tableView = this;
+
+        this.$el.show(function() {
+
+          tableView.fitTable();
+
+        });
       }
 
     });

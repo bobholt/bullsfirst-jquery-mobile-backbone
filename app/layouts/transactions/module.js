@@ -1,13 +1,15 @@
 define(
   [
 
+    'app',
+
     'backbone',
 
     'superview'
 
   ],
 
-  function(){
+  function(app){
 
     var Module = {};
 
@@ -20,6 +22,18 @@ define(
       render: function() {
 
         return this.renderInPlace();
+
+      },
+
+      postRender: function() {
+
+        app.widgets.create([
+          {
+            widget: 'gainlossfooter',
+            element: '#transactions-footer div',
+            active: 'transactions'
+          }
+        ]);
 
       }
 

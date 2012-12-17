@@ -11,8 +11,6 @@ define(
 
   function(accountsModule, app, E){
 
-    console.log('accounts');
-
     var userAccounts = computeAccountData(app.userModel.get('accounts'));
 
     var accountsCollection = new accountsModule.Collection(userAccounts);

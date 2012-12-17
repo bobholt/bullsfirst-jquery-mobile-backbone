@@ -7,10 +7,12 @@
 }
 
 html, body {
+  color: #010101;
+  font-size: 1em;
   width: 100%;
 }
 
-h2, h3 {
+h1, h2, h3 {
   margin: 0;
   height: auto;
   font-size: 1em;
@@ -44,6 +46,11 @@ label.ui-input-text {
   width: 8em; /* 80 / 10 = 8 */
 }
 
+menu, ul {
+  margin: 0;
+  padding: 0;
+}
+
 body > section {
   height: 100%;
   width: 100%;
@@ -66,38 +73,42 @@ body > section {
 }
 
 /* -----------------------------------------------------------------------------
- * Layout Information
- * -------------------------------------------------------------------------- */
-.layout-info {
-    float: left;
-    font-weight: bold;
-    font-size: 10px;
-}
-
-/* -----------------------------------------------------------------------------
  * Interface
  * -------------------------------------------------------------------------- */
 .ui-bar-a {
-    background: #F79F1E;
     text-shadow: none;
+}
+
+.ui-btn {
+    background: #EF4423; /* disabled color: #858585; */
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+  background: #f07637;
+}
+
+.ui-btn:active {
+  background: #8d3329;
 }
 
 /* -----------------------------------------------------------------------------
  * Summary
  * -------------------------------------------------------------------------- */
 .summary-table {
-    width: 320px;
-    float: right;
+    width: 100%;
+    margin-bottom: 1.25em; /* 20 / 16 = 1.25 */
 }
 
 .summary-table th {
     color: #676767;
-    font-size: 10px;
+    font-size: 0.5em; /* 8 / 16 = 0.5 */
+    font-weight: normal;
     text-align: center;
 }
 
 .summary-table td {
-    font-size: 18px;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
 }
@@ -107,7 +118,7 @@ body > section {
  * -------------------------------------------------------------------------- */
 .gain-loss-chart {
     clear: both;
-    height: 137px;
+    height: 247px;
     margin: 10px 0;
     width: 100%;
 }
@@ -117,6 +128,7 @@ body > section {
  * -------------------------------------------------------------------------- */
 /* Following styles are required by iScroll, otherwise scroller will not work */
 .gain-loss-table-wrapper {
+    display: none;
     left: 0;
     overflow: auto;
     position: absolute;
@@ -134,18 +146,20 @@ body > section {
 
 .gain-loss-table {
     border-spacing: 0;
+    color: #575757;
+    font-size: 0.625em; /* 10 / 16 = 0.625 */
+    margin-bottom: 3.6em; /* 36 / 10 = 3.6 */
     padding: 0 15px;
     width: 100%;
 }
 
 .gain-loss-table thead tr {
-    background-color: #B2B2B2;
+    background-color: #999999;
     height: 23px;
 }
 
 .gain-loss-table th {
     color: #FFFFFF;
-    font-size: 12px;
     text-shadow: none;
     display: none;
     text-align: right;
@@ -153,15 +167,49 @@ body > section {
 
 .gain-loss-table td {
     border-bottom: solid 1px #B2B2B2;
-    font-size: 12px;
-    height: 23px;
+    height: 3.4em; /* 34 / 10 = 3.4  */
     display: none;
     text-align: right;
+    padding: 0.5em; /* 5 / 10 = 0.5 */
+}
+
+.gain-loss-table tbody tr:last-child td {
+  border-bottom: 0 none;
+}
+
+.gain-loss-table .ticker {
+  font-weight: bold;
+  line-height: 17px;
 }
 
 .gain-loss-table .account,
 .gain-loss-table .security {
+    color: #333;
+    padding-left: 1.6em; /* 16 / 10 = 1.6 */
     text-align: left;
+}
+
+.gain-loss-table .gain-percent {
+  font-weight: bold;
+}
+
+.gain-loss-table tbody .details {
+  background: transparent url(../img/more_info_bg_normal.png) no-repeat scroll 0.2em center;
+  cursor: pointer;
+  padding-right: 1.6em; /* 16 / 10 = 1.6 */
+  text-align: center;
+  width: 2.7em;
+}
+
+.gain-loss-table tbody .details:hover,
+.gain-loss-table tbody .details:focus,
+.gain-loss-table tbody .details:active {
+  background-image: url(../img/more_info_bg_active.png);
+}
+
+.gain-loss-table th.account,
+.gain-loss-table th.security {
+  color: #575757;
 }
 
 .gain-loss-table .symbol {
@@ -219,7 +267,6 @@ h3.subhead {
 }
 
 #l-login-button {
-  background: #EF4423;
   color: #fff;
   display: block;
   font-size: 0.75em; /* 12 / 16 = 0.75 */;
@@ -248,9 +295,160 @@ h3.subhead {
   margin: 0.2em 0 0 0.6em;
 }
 
- /* -----------------------------------------------------------------------------
- * Positions Page
- * -------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+* Gain/Loss Pages
+* -------------------------------------------------------------------------- */
+.gain-loss-page h1 {
+  display: inline-block;
+  font-size: 0.9375em; /* 15 / 16 = 0.9375 */
+  margin-bottom: 1.3333333333em; /* 20 / 15 = 1.3333333333 */
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.gain-loss-header {
+  background: #F79F1E;
+  height: 2.1875em; /* 38 / 16 = 2.1875 */
+  margin-bottom: 0.625em; /* 10 / 16 = 0.625 */
+  min-width: 14em; /* 224 / 16 = 14 */
+}
+
+.gain-loss-header menu {
+  float: right;
+  font-size: 0.75em; /* 12 / 16 = 0.75 */
+  margin: 0.5em 1em; /* 6 / 12 = 0.5 */
+}
+
+.gain-loss-header menu .ui-btn {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.4166666667em 0.5em 0.3333333333em; /* 5 / 12 = 0.4166666667; 4 / 12 = 0.3333333333 */
+}
+
+.gain-loss-header menu .ui-btn a {
+  color: #fff;
+}
+
+.logo-header {
+  margin: 0.125em 0 0 1em; /* 2 / 16 = 0.125; */
+}
+
+.chart-table-menu {
+  float: right;
+}
+
+.chart-select,
+.table-select {
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  width: 22px;
+}
+
+.table-select {
+  background: transparent url(../img/icon_table-inactive.png) no-repeat scroll 0 0;
+}
+
+.table-select.active-view {
+  background-image: url(../img/icon_table-active.png);
+}
+
+.chart-select {
+  background: transparent url(../img/icon_chart-inactive.png) no-repeat scroll 0 0;
+}
+
+.chart-select.active-view {
+  background-image: url(../img/icon_chart-active.png);
+}
+
+/* -----------------------------------------------------------------------------
+* Gain/Loss Footer
+* -------------------------------------------------------------------------- */
+
+.gain-loss-footer .ui-btn {
+  background: #404041;
+  color: #fff;
+}
+
+.gain-loss-footer .ui-navbar li {
+  border: 0;
+  float: left;
+  margin: 0;
+  width: 25%;
+}
+.gain-loss-footer .ui-navbar li a {
+  background: #404041 url(../img/positions_lower_btn_icon_normal.png) no-repeat scroll center 0.6em;
+  border-right: 1px solid #fff;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 0.625em; /* 10 / 16 = 0.625 */
+  height: 4.6em; /* 46 / 10 = 4.6 */
+  margin: 0;
+  padding: 2.8em 0 0;
+}
+
+.gain-loss-footer .ui-navbar li a:hover,
+.gain-loss-footer .ui-navbar li a:focus,
+.gain-loss-footer .ui-navbar li a:active,
+.gain-loss-footer .ui-navbar li a.active-tab {
+  background-color: #a7a9ab;
+  color: #404041;
+}
+
+.gain-loss-footer .ui-navbar .accounts a {
+  background-image: url(../img/accounts_lower_btn_icon_normal.png);
+  background-position: center 0.9em;
+}
+
+.gain-loss-footer .ui-navbar .accounts a:hover,
+.gain-loss-footer .ui-navbar .accounts a:focus,
+.gain-loss-footer .ui-navbar .accounts a:active,
+.gain-loss-footer .ui-navbar .accounts a.active-tab {
+  background-image: url(../img/accounts_lower_btn_icon_active.png);
+}
+
+.gain-loss-footer .ui-navbar .orders a {
+  background-image: url(../img/orders_lower_btn_icon_normal.png);
+}
+
+.gain-loss-footer .ui-navbar .orders a:hover,
+.gain-loss-footer .ui-navbar .orders a:focus,
+.gain-loss-footer .ui-navbar .orders a:active,
+.gain-loss-footer .ui-navbar .orders a.active-tab {
+  background-image: url(../img/orders_lower_btn_icon_active.png);
+}
+
+.gain-loss-footer .ui-navbar .positions a {
+  background-image: url(../img/positions_lower_btn_icon_normal.png);
+}
+
+.gain-loss-footer .ui-navbar .positions a:hover,
+.gain-loss-footer .ui-navbar .positions a:focus,
+.gain-loss-footer .ui-navbar .positions a:active,
+.gain-loss-footer .ui-navbar .positions a.active-tab {
+  background-image: url(../img/positions_lower_btn_icon_active.png);
+}
+
+.gain-loss-footer .ui-navbar .transactions a {
+  background-image: url(../img/transactions_lower_btn_icon_normal.png);
+}
+
+.gain-loss-footer .ui-navbar .transactions a:hover,
+.gain-loss-footer .ui-navbar .transactions a:focus,
+.gain-loss-footer .ui-navbar .transactions a:active,
+.gain-loss-footer .ui-navbar .transactions a.active-tab {
+  background-image: url(../img/transactions_lower_btn_icon_active.png);
+}
+
+/* -----------------------------------------------------------------------------
+* Positions Page
+* -------------------------------------------------------------------------- */
+#positions-section {
+  width: 100%;
+  padding: 0 1em;
+  margin: 0 auto;
+}
 #positions .gain-loss-table td.positions,
 #positions .gain-loss-table th.positions {
   display: table-cell;
@@ -259,6 +457,12 @@ h3.subhead {
 /* -----------------------------------------------------------------------------
  * Accounts Page
  * -------------------------------------------------------------------------- */
+#accounts-section {
+  width: 100%;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+
 #accounts .gain-loss-table td.accounts,
 #accounts .gain-loss-table th.accounts {
   display: table-cell;

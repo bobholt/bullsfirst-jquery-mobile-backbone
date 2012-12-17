@@ -29,6 +29,10 @@ define(
 
       $(window).on('resize', $.proxy(gainlosstableView.fitTable, gainlosstableView));
 
+      E.subscribe('showTable', function() {
+        gainlosstableView.showTable();
+      });
+
     };
 
   }

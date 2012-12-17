@@ -3,13 +3,11 @@ define(
 
     'positionsModule',
 
-    'app',
-
-    'pubsub'
+    'app'
 
   ],
 
-  function(positionsModule, app, E){
+  function(positionsModule, app){
 
     var userAccounts = computePositionData(app.userModel.get('accounts'));
 
