@@ -29,6 +29,10 @@ define(
 
         app.widgets.create([
           {
+            widget: 'gainlossheader',
+            element: '#transactions'
+          },
+          {
             widget: 'gainlossfooter',
             element: '#transactions-footer div',
             active: 'transactions'

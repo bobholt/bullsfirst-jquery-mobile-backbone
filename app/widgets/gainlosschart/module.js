@@ -40,18 +40,24 @@ define(
         var colorLoss = '#EF4723';
         var colorCash = '#C4C4C4';
         var gapWidth = 1;
+        var labelSpace = 20;
+        var labelAttr = {
+          "font-family": "Arial",
+          "font-size": "9",
+          "transform": "r-90"
+        };
 
         var numGaps = chartData.length - 1;
 
         var chartWidth = chartView.$el.width();
         var chartHeight = chartView.$el.height();
 
-        var totalPositionWidth = chartWidth - (numGaps * gapWidth);
+        var totalPositionWidth = chartWidth - labelSpace - (numGaps * gapWidth);
 
         var totalInvestment = 0;
 
-        var nextX = 0;
-        var height = 0;
+        // Set the 'next' bar to start after the label gutter
+        var nextX = labelSpace;
 
         chartData.each(function(position, i) {
 
@@ -65,23 +71,51 @@ define(
         // Draw chartData
         chartData.each(function(position, index) {
 
+          var height = 0;
+          var x = nextX;
+          var y = 0;
+          var tooltipCss = {};
+
+          var tooltip = $('<p>').addClass('tooltip').html(position.get('name') + '<br />' + '|');
+
           var positionWidth = Math.round((position.get('totalCost')/totalInvestment) * totalPositionWidth);
 
           var gainPercent = position.get('gainPercent');
 
           if (gainPercent >= 0) {
 
+            height = Math.round((gainPercent/100) * (chartHeight/2));
+            y = chartHeight / 2 - height;
+
+            tooltipCss = {
+              top: Math.max(y - 18, -18),
+              textAlign: x + (positionWidth / 2) - 1 > chartWidth / 2 ? 'right' : 'left'
+            };
+
+            if ((x + positionWidth / 2) - 1 > chartWidth / 2) {
+              tooltipCss.right = chartWidth - x - (positionWidth / 2);
+            } else {
+              tooltipCss.left = x + (positionWidth / 2) - 1;
+            }
+
             if (gainPercent > 0) {
 
               // Draw the gain bar
-              height = Math.round((gainPercent/100) * (chartHeight/2));
-              paper.rect(nextX, (chartHeight/2) - height, positionWidth, height).attr({'stroke-width': 0, 'fill': colorGain});
+              paper.rect(x, y, positionWidth, height).attr({'stroke-width': 0, 'fill': colorGain}).mouseover(function() {
+                tooltip.css(tooltipCss).appendTo(chartView.$el);
+              }).mouseout(function() {
+                tooltip.remove();
+              });
 
             }
 
             // Draw the investment bar
             var color = (position.get('symbol') === 'CASH') ? colorCash : colorInvestment;
-            paper.rect(nextX, chartHeight/2, positionWidth, chartHeight/2).attr({'stroke-width': 0, 'fill': color});
+            paper.rect(nextX, chartHeight/2, positionWidth, chartHeight/2).attr({'stroke-width': 0, 'fill': color}).mouseover(function() {
+                tooltip.css(tooltipCss).appendTo(chartView.$el);
+            }).mouseout(function() {
+              tooltip.remove();
+            });
 
           }
 
@@ -89,16 +123,41 @@ define(
 
             // Draw the loss bar
             height = Math.round((-gainPercent/100) * (chartHeight/2));
-            paper.rect(nextX, (chartHeight/2), positionWidth, (chartHeight/2) + height).attr({'stroke-width': 0, 'fill': colorLoss});
+            y = chartHeight / 2;
+
+            tooltipCss = {
+              top: chartHeight / 2 - 18,
+              textAlign: x + (positionWidth / 2) - 1 > chartWidth / 2 ? 'right' : 'left'
+            };
+
+            if ((x + positionWidth / 2) - 1 > chartWidth / 2) {
+              tooltipCss.right = chartWidth - x - (positionWidth / 2);
+            } else {
+              tooltipCss.left = x + (positionWidth / 2) - 1;
+            }
+
+            paper.rect(x, y, positionWidth, (chartHeight/2) + height).attr({'stroke-width': 0, 'fill': colorLoss}).mouseover(function() {
+                tooltip.css(tooltipCss).appendTo(chartView.$el);
+            }).mouseout(function() {
+              tooltip.remove();
+            });
 
             // Draw the remaining investmet bar
-            paper.rect(nextX, chartHeight/2 + height, positionWidth, chartHeight).attr({'stroke-width': 0, 'fill': colorInvestment});
+            paper.rect(nextX, chartHeight/2 + height, positionWidth, chartHeight).attr({'stroke-width': 0, 'fill': colorInvestment}).mouseover(function() {
+                tooltip.css(tooltipCss).appendTo(chartView.$el);
+            }).mouseout(function() {
+              tooltip.remove();
+            });
 
           }
 
           nextX += (positionWidth + gapWidth);
 
         });
+
+        paper.text(9, 62, "GAIN").attr(labelAttr);
+
+        paper.text(9, 185, "INVESTMENT").attr(labelAttr);
 
         this.paper = paper;
 

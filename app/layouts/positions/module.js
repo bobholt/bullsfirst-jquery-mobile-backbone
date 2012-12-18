@@ -74,6 +74,10 @@ define(
 
         app.widgets.create([
           {
+            widget: 'gainlossheader',
+            element: '#positions'
+          },
+          {
             widget: 'summarytable',
             element: '#positions-summary-wrapper'
           },

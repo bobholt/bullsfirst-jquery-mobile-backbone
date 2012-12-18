@@ -56,6 +56,13 @@ body > section {
   width: 100%;
 }
 
+p.tooltip {
+  font-size: 0.5625em; /* 9 / 16 = 0.5625 */
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
 /* -----------------------------------------------------------------------------
  * Colors
  * -------------------------------------------------------------------------- */
@@ -120,6 +127,7 @@ body > section {
     clear: both;
     height: 247px;
     margin: 10px 0;
+    position: relative;
     width: 100%;
 }
 
@@ -163,6 +171,7 @@ body > section {
     text-shadow: none;
     display: none;
     text-align: right;
+
 }
 
 .gain-loss-table td {
@@ -171,6 +180,11 @@ body > section {
     display: none;
     text-align: right;
     padding: 0.5em; /* 5 / 10 = 0.5 */
+}
+
+.gain-loss-table td.positions,
+.gain-loss-table th.positions {
+  display: table-cell;
 }
 
 .gain-loss-table tbody tr:last-child td {
@@ -298,7 +312,14 @@ h3.subhead {
 /* -----------------------------------------------------------------------------
 * Gain/Loss Pages
 * -------------------------------------------------------------------------- */
-.gain-loss-page h1 {
+.content-section {
+  width: 100%;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+
+.gain-loss-page h1,
+.transaction-page h1 {
   display: inline-block;
   font-size: 0.9375em; /* 15 / 16 = 0.9375 */
   margin-bottom: 1.3333333333em; /* 20 / 15 = 1.3333333333 */
@@ -316,13 +337,19 @@ h3.subhead {
 .gain-loss-header menu {
   float: right;
   font-size: 0.75em; /* 12 / 16 = 0.75 */
-  margin: 0.5em 1em; /* 6 / 12 = 0.5 */
+  margin: 0 1.3333333333em; /* 16 / 12 = 1.3333333333 */
 }
 
 .gain-loss-header menu .ui-btn {
   color: #fff;
+  float: left;
   font-weight: bold;
+  margin-right: 0.5em; /* 6 / 12 = 0.5 */
   padding: 0.4166666667em 0.5em 0.3333333333em; /* 5 / 12 = 0.4166666667; 4 / 12 = 0.3333333333 */
+}
+
+.gain-loss-header menu .ui-btn:last-child {
+  margin-right: 0;
 }
 
 .gain-loss-header menu .ui-btn a {
@@ -439,31 +466,4 @@ h3.subhead {
 .gain-loss-footer .ui-navbar .transactions a:active,
 .gain-loss-footer .ui-navbar .transactions a.active-tab {
   background-image: url(../img/transactions_lower_btn_icon_active.png);
-}
-
-/* -----------------------------------------------------------------------------
-* Positions Page
-* -------------------------------------------------------------------------- */
-#positions-section {
-  width: 100%;
-  padding: 0 1em;
-  margin: 0 auto;
-}
-#positions .gain-loss-table td.positions,
-#positions .gain-loss-table th.positions {
-  display: table-cell;
-}
-
-/* -----------------------------------------------------------------------------
- * Accounts Page
- * -------------------------------------------------------------------------- */
-#accounts-section {
-  width: 100%;
-  padding: 0 1em;
-  margin: 0 auto;
-}
-
-#accounts .gain-loss-table td.accounts,
-#accounts .gain-loss-table th.accounts {
-  display: table-cell;
 }

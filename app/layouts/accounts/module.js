@@ -72,6 +72,10 @@ define(
 
         app.widgets.create([
           {
+            widget: 'gainlossheader',
+            element: '#accounts'
+          },
+          {
             widget: 'summarytable',
             element: '#accounts-summary-wrapper'
           },
