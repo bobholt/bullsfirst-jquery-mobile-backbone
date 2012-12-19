@@ -56,13 +56,6 @@ body > section {
   width: 100%;
 }
 
-p.tooltip {
-  font-size: 0.5625em; /* 9 / 16 = 0.5625 */
-  position: absolute;
-  margin: 0;
-  padding: 0;
-}
-
 /* -----------------------------------------------------------------------------
  * Colors
  * -------------------------------------------------------------------------- */
@@ -131,6 +124,14 @@ p.tooltip {
     width: 100%;
 }
 
+p.tooltip {
+  font-size: 0.5625em; /* 9 / 16 = 0.5625 */
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* -----------------------------------------------------------------------------
  * Gain/Loss Table
  * -------------------------------------------------------------------------- */
@@ -174,12 +175,20 @@ p.tooltip {
 
 }
 
+.gain-loss-table tr:hover td,
+.gain-loss-table tr:focus td,
+.gain-loss-table tr:active td {
+  background-color: #58585B;
+  color: #fff;
+  cursor: pointer;
+}
+
 .gain-loss-table td {
     border-bottom: solid 1px #B2B2B2;
-    height: 3.4em; /* 34 / 10 = 3.4  */
     display: none;
-    text-align: right;
+    height: 3.4em; /* 34 / 10 = 3.4  */
     padding: 0.5em; /* 5 / 10 = 0.5 */
+    text-align: right;
 }
 
 .gain-loss-table td.positions,
@@ -191,9 +200,14 @@ p.tooltip {
   border-bottom: 0 none;
 }
 
+.gain-loss-table .account {
+  font-size: 0.9em; /* 9 / 10 = 0.9 */
+}
+
 .gain-loss-table .ticker {
+  font-size: 1.1111111111em; /* 10 / 9 = 1.1111111111 */
   font-weight: bold;
-  line-height: 17px;
+  line-height: 1.7em; /* 17 / 10 = 1.7 */
 }
 
 .gain-loss-table .account,
@@ -359,6 +373,10 @@ h3.subhead {
 .logo-header {
   margin: 0.125em 0 0 1em; /* 2 / 16 = 0.125; */
 }
+
+/* -----------------------------------------------------------------------------
+* Chart/Table Switch
+* -------------------------------------------------------------------------- */
 
 .chart-table-menu {
   float: right;

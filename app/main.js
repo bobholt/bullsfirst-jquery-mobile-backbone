@@ -12,11 +12,12 @@ function(app, Router) {
   // Set up the "mobileinit" handler before requiring jQuery Mobile's module
   $( document ).on( "mobileinit", function() {
 
-    // Prevents all anchor click handling including the addition of active button state and alternate link bluring.
-    $.mobile.linkBindingEnabled = false;
-
-    // Disabling this will prevent jQuery Mobile from handling hash changes
-    $.mobile.hashListeningEnabled = false;
+    $.extend( $.mobile, {
+      ajaxEnabled: false,
+      hashListeningEnabled: false, // Disabling this will prevent jQuery Mobile from handling hash changes
+      linkBindingEnabled: false, // Prevents all anchor click handling including the addition of active button state and alternate link bluring.
+      pushStateEnabled: false // Forces jqm to ignore hashchange even on back-button and reload
+    });
 
   });
 

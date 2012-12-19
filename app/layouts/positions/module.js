@@ -34,7 +34,8 @@ define(
         var tableSelect = this.$el.find('.table-select');
 
         if (!chart.is(':visible')) {
-          chart.show();
+
+          E.publish('showChart');
           chartSelect.addClass('active-view');
           table.hide();
           tableSelect.removeClass('active-view');

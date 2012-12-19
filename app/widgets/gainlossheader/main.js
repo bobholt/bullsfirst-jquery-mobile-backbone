@@ -1,20 +1,24 @@
 define(
   [
 
-    'gainlossheaderModule',
+    'baseWidget',
 
-    'app',
+    'gainlossheaderModule',
 
     'pubsub'
 
   ],
 
-  function(gainlossheaderModule, app, E){
+  function(Widget, gainlossheaderModule, E){
 
     return function(options) {
 
-      var gainlossFooterView = new gainlossheaderModule.View({
+      var gainlossheader = new Widget();
+
+      gainlossheader.view = new gainlossheaderModule.View({
+
         activeEl: options.active
+
       }).render().placeAt(options.element, 'first');
 
     };

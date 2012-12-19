@@ -9,11 +9,15 @@ define(
 
   function(homeModule, E){
 
-    var homeView = new homeModule.View({
+    return function() {
 
-      el: '#home'
+      var homeView = new homeModule.View({
 
-    }).render();
+        el: '#home'
+
+      }).render();
+
+    };
 
   }
 

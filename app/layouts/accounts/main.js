@@ -11,59 +11,26 @@ define(
 
   function(accountsModule, app, E){
 
-    var userAccounts = computeAccountData(app.userModel.get('accounts'));
+    return function() {
 
-    var accountsCollection = new accountsModule.Collection(userAccounts);
+      var allAccounts = app.userModel.get('allAccounts');
 
-    var accountsView = new accountsModule.View({
+      var accountsCollection = new accountsModule.Collection(allAccounts);
 
-      el: $('#accounts'),
-      collection: accountsCollection
+      var accountsView = new accountsModule.View({
 
-    }).render();
+        el: $('#accounts'),
+        collection: accountsCollection
 
-    function computeAccountData(accounts) {
+      }).render();
 
-      var chartData = [];
+      E.subscribe('pageChange', function() {
 
-      accounts.each(function(account, index) {
-
-          var accountData = {};
-
-          accountData.name = account.get('name');
-          accountData.symbol = account.get('name');
-          accountData.cashPosition = account.get('cashPosition').amount;
-          accountData.marketValue = account.get('marketValue').amount;
-          accountData.totalCost = 0;
-
-          $.each(account.get('positions'), function (index, position) {
-
-              if (position.totalCost) {
-
-                  accountData.totalCost += position.totalCost.amount;
-
-              } else if (position.instrumentSymbol === "CASH") {
-
-                  accountData.totalCost += position.marketValue.amount;
-
-              }
-
-          });
-
-          accountData.gain = accountData.marketValue = accountData.totalCost;
-          accountData.gainPercent = accountData.gain / accountData.totalCost * 100;
-
-          chartData.push(accountData);
+        accountsView.selectChart();
 
       });
 
-      return chartData.sort(function (a, b) {
-
-        return b.gainPercent - a.gainPercent;
-
-      });
-
-    }
+    };
 
   }
 

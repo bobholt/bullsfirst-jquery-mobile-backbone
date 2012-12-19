@@ -5,8 +5,8 @@
         <th class="accounts priority1 account">Account</th>
         <th class="positions priority1 security">Security</th>
         <th class="positions priority1 quantity">Quantity</th>
-        <th class="positions priority1 last-trade">Last Trade</th>
-        <th class="positions accounts priority1 market-value">Market Value</th>
+        <th class="positions priority1 last-trade">Last&nbsp;Trade</th>
+        <th class="positions accounts priority1 market-value">Market&nbsp;Value</th>
         <th class="positions priority2 price-paid">Price Paid</th>
         <th class="positions priority3 total-cost">Total Cost</th>
         <th class="positions accounts priority3 gain">Gain</th>
@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       {{#each tableData}}
-        <tr>
+        <tr data-ticker="{{this.symbol}}">
           <td class="accounts priority1 account">{{this.name}}</td>
           <td class="positions priority1 account">
             <span class="ticker">{{this.symbol}}</span><br />

@@ -9,12 +9,15 @@ define(
 
   function(ordersModule, E){
 
-    var ordersView = new ordersModule.View({
+    return function() {
 
-      el: $('#orders')
+      var ordersView = new ordersModule.View({
 
-    }).render();
+        el: $('#orders')
 
+      }).render();
+
+    };
   }
 
 );

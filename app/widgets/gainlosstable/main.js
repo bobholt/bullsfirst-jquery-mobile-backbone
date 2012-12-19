@@ -1,25 +1,29 @@
 define(
   [
 
-    'gainlosstableModule',
+    'baseWidget',
 
-    'app',
+    'gainlosstableModule',
 
     'pubsub'
 
   ],
 
-  function(gainlosstableModule, app, E){
+  function(Widget, gainlosstableModule, E){
 
     return function(options) {
 
-      var gainlosstableModel = new gainlosstableModule.Model({
+      var gainlosstable = new Widget();
+      var gainlosstableModel = null;
+      var gainlosstableView = null;
+
+      gainlosstable.model = gainlosstableModel = new gainlosstableModule.Model({
 
         tableData: options.tableData.toJSON()
 
       });
 
-      var gainlosstableView = new gainlosstableModule.View({
+      gainlosstable.view = gainlosstableView = new gainlosstableModule.View({
 
         model: gainlosstableModel,
         scrollElement: options.scrollElement,
@@ -27,10 +31,17 @@ define(
 
       }).render().placeAt(options.element);
 
-      $(window).on('resize', $.proxy(gainlosstableView.fitTable, gainlosstableView));
+      // Attach event listeners
+      $(window).on('resize', function() {
+
+        gainlosstableView.fitTable();
+
+      });
 
       E.subscribe('showTable', function() {
+
         gainlosstableView.showTable();
+
       });
 
     };

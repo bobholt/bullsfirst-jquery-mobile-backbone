@@ -42,7 +42,7 @@ define(
         // Load in the user's data
         app.widgets.create({
           widget: 'user',
-          href: e.currentTarget.href
+          href: 'positions'
         });
 
       },

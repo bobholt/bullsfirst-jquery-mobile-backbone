@@ -1,19 +1,21 @@
 define(
   [
 
-    'loginformModule',
+    'baseWidget',
 
-    'app',
+    'loginformModule',
 
     'pubsub'
 
   ],
 
-  function(loginformModule, app, E){
+  function(Widget, loginformModule, E){
 
     return function(options) {
 
-      var loginformView = new loginformModule.View().render().placeAt(options.element);
+      var loginform = new Widget();
+
+      loginform.view = new loginformModule.View().render().placeAt(options.element);
 
     };
 

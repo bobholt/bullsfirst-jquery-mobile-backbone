@@ -3,86 +3,34 @@ define(
 
     'positionsModule',
 
-    'app'
+    'app',
+
+    'pubsub'
 
   ],
 
-  function(positionsModule, app){
+  function(positionsModule, app, E){
 
-    var userAccounts = computePositionData(app.userModel.get('accounts'));
+    return function() {
 
-    var positionsCollection = new positionsModule.Collection(userAccounts);
+      var allPositions = app.userModel.get('allPositions');
 
-    var positionsView = new positionsModule.View({
+      var positionsCollection = new positionsModule.Collection(allPositions);
 
-      el: $('#positions'),
-      collection: positionsCollection
+      var positionsView = new positionsModule.View({
 
-    }).render();
+        el: $('#positions'),
+        collection: positionsCollection
 
-    function computePositionData(accounts) {
+      }).render();
 
-      var allPositions = _.flatten(accounts.pluck('positions'));
-      var nameArray = [];
-      var chartData = [];
+      E.subscribe('pageChange', function() {
 
-      $.each(allPositions, function(index, position) {
-
-          var duplicateIndex = nameArray.indexOf(position.instrumentSymbol);
-          var chartItem = chartData[duplicateIndex];
-          var newPosition = {};
-
-          newPosition.quantity = position.quantity;
-          newPosition.name = position.instrumentName;
-          newPosition.symbol = position.instrumentSymbol;
-          newPosition.marketValue = position.marketValue.amount;
-
-          if (position.totalCost) {
-
-              newPosition.lastTrade = position.lastTrade.amount;
-              newPosition.pricePaid = position.pricePaid.amount;
-              newPosition.totalCost = position.totalCost.amount;
-              newPosition.cashPosition = 0;
-
-          } else if (position.instrumentSymbol === "CASH") {
-
-              newPosition.totalCost = position.marketValue.amount;
-              newPosition.cashPosition = position.marketValue.amount;
-              newPosition.quantity = position.marketValue.amount;
-              newPosition.lastTrade = 1;
-              newPosition.pricePaid = 1;
-
-          }
-
-          newPosition.gain = newPosition.marketValue - newPosition.totalCost;
-          newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
-
-          if (duplicateIndex === -1) {
-
-              chartData.push(newPosition);
-              nameArray.push(position.instrumentSymbol);
-
-          } else {
-
-              chartItem.marketValue += newPosition.marketValue;
-              chartItem.totalCost += newPosition.totalCost;
-              chartItem.cashPosition += newPosition.cashPosition;
-              chartItem.quantity += newPosition.quantity;
-
-              chartItem.gain += newPosition.gain;
-              chartItem.gainPercent = chartItem.gain / chartItem.totalCost * 100;
-
-          }
+        positionsView.selectChart();
 
       });
 
-      return chartData.sort(function(a, b) {
-
-        return b.gainPercent - a.gainPercent;
-
-      });
-
-    }
+    };
 
   }
 

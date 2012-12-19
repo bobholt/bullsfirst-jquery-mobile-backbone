@@ -38,10 +38,13 @@ require.config({
     ordersModule:         "layouts/orders/module",
     positionsMain:        "layouts/positions/main",
     positionsModule:      "layouts/positions/module",
+    positionsummaryMain:   "layouts/positionsummary/main",
+    positionsummaryModule: "layouts/positionsummary/module",
     transactionsMain:     "layouts/transactions/main",
     transactionsModule:   "layouts/transactions/module",
 
     // Widgets
+    baseWidget:           "widgets/_lib/baseWidget",
     gainlosschartMain:    "widgets/gainlosschart/main",
     gainlosschartModule:  "widgets/gainlosschart/module",
     gainlossfooterMain:   "widgets/gainlossfooter/main",

@@ -4,9 +4,7 @@ define([
 
   'pubsub',
 
-  'backbone',
-
-  'jqmobile'
+  'backbone'
 
 ],
 
@@ -21,13 +19,15 @@ function(app, E) {
 
       // Trigger the initial route and enable HTML5 History API support, set the
       // root folder to '/' by default.  Change in app.js.
-      Backbone.history.start({ pushState: false, root: app.root });
+      Backbone.history.start({ pushState: true, root: app.root });
 
     },
 
     routes: {
       "":       "index",
-      ":page":  "goToPage"
+      "login": "index",
+      ":page":  "goToPage",
+      "positions/:ticker": "showPositionSummary"
     },
 
     index: function() {
@@ -36,7 +36,9 @@ function(app, E) {
 
       require(['homeMain'], function(main) {
 
-        $.mobile.changePage('#home');
+        $.mobile.changePage('#home', {changeHash: false});
+
+        main();
 
       });
 
@@ -44,29 +46,45 @@ function(app, E) {
 
     goToPage: function(page) {
 
+      E.publish('pageChange');
+
       if (app.isLoggedIn) {
 
         require([page + 'Main'], function(main) {
 
-          $.mobile.changePage('#' + page, {reverse: false, changeHash: false});
+          $.mobile.changePage('#' + page, {changeHash: false});
+
+          main();
 
         });
 
       } else {
 
-        require(['homeMain'], function(main) {
-
-          $.mobile.changePage('#home');
-
-        });
+        this.navigate("login", {trigger: true});
 
       }
 
-      redrawTimeout = setTimeout(function() {
+    },
 
-        E.publish('refreshChart');
+    showPositionSummary: function(page, ticker) {
 
-      }, 200);
+      E.publish('pageChange');
+
+      if (app.isLoggedIn) {
+
+        require(['positionsummaryMain'], function(main) {
+
+          $.mobile.changePage('#position-summary', {changeHash: false});
+
+          main();
+
+        });
+
+      } else {
+
+        this.navigate("login", {trigger: true});
+
+      }
 
     }
 

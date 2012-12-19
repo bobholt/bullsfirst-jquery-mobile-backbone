@@ -9,11 +9,15 @@ define(
 
   function(transactionsModule, E){
 
-    var transactionsView = new transactionsModule.View({
+    return function() {
 
-      el: $('#transactions')
+      var transactionsView = new transactionsModule.View({
 
-    }).render();
+        el: $('#transactions')
+
+      }).render();
+
+    };
 
   }
 

@@ -51,7 +51,9 @@ function(E) {
 
       destroy: function(widget) {
 
-        require.undef(widget + 'Main');
+        $(widget.element).empty();
+
+        require.undef(widget.widget + 'Main');
 
       }
 

@@ -1,21 +1,27 @@
 define(
   [
 
-    'summarytableModule',
+    'baseWidget',
 
     'app',
+
+    'summarytableModule',
 
     'pubsub'
 
   ],
 
-  function(summarytableModule, app, E){
+  function(Widget, app, summarytableModule, E){
 
     return function(options) {
 
+      var summarytable = new Widget();
+      var summarytableModel = null;
+      var summarytableView = null;
+
       var userModel = app.userModel;
 
-      var summarytableModel = new summarytableModule.Model({
+      summarytable.model = summarytableModel = new summarytableModule.Model({
 
         marketValue: userModel.get('marketValue'),
         totalCost: userModel.get('totalCost'),
@@ -23,7 +29,7 @@ define(
 
       });
 
-      var summarytableView = new summarytableModule.View({
+      summarytable.view = summarytableView = new summarytableModule.View({
 
         model: summarytableModel
 

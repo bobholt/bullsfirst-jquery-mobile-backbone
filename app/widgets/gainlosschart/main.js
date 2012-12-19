@@ -1,33 +1,43 @@
 define(
   [
 
-    'gainlosschartModule',
+    'baseWidget',
 
-    'app',
+    'gainlosschartModule',
 
     'pubsub'
 
   ],
 
-  function(gainlosschartModule, app, E){
+  function(Widget, gainlosschartModule, E){
 
     return function(options) {
 
-      var gainlosschartView = new gainlosschartModule.View({
+      var gainlosschart = new Widget();
+      var gainlosschartView = null;
+
+      gainlosschart.view = gainlosschartView = new gainlosschartModule.View({
 
         collection: options.chartData
 
       }).render().placeAt(options.element);
 
-      $(window).on('resize', $.proxy(gainlosschartView.drawChart, gainlosschartView));
+      // Attach event listeners
+      $(window).on('resize', function() {
+
+        gainlosschartView.drawChart();
+
+      });
 
       E.subscribe('refreshChart', function() {
 
-        if (gainlosschartView.$el.is(':visible')) {
+        gainlosschartView.drawChart();
 
-          gainlosschartView.drawChart();
+      });
 
-        }
+      E.subscribe('showChart', function() {
+
+        gainlosschartView.showChart();
 
       });
 

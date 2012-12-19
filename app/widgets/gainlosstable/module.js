@@ -27,6 +27,12 @@ define(
 
       template: baseTemplate,
 
+      events: {
+
+        "click tbody tr": "showPositionSummary"
+
+      },
+
       fitTable: function() {
 
         var tableView = this;
@@ -67,7 +73,14 @@ define(
 
       },
 
+      showPositionSummary: function(e) {
+
+        app.router.navigate("#positions/" + $(e.currentTarget).data('ticker'), {trigger: true});
+
+      },
+
       showTable: function() {
+
         var tableView = this;
 
         this.$el.show(function() {
@@ -75,6 +88,7 @@ define(
           tableView.fitTable();
 
         });
+
       }
 
     });
