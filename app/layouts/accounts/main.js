@@ -13,7 +13,7 @@ define(
 
     return function() {
 
-      var allAccounts = app.userModel.get('allAccounts');
+      var allAccounts = app.userModel.getAccounts();
 
       var accountsCollection = new accountsModule.Collection(allAccounts);
 

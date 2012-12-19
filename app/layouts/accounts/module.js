@@ -77,6 +77,7 @@ define(
           },
           {
             widget: 'summarytable',
+            tableData: accountsView.collection,
             element: '#accounts-summary-wrapper'
           },
           {

@@ -21,11 +21,28 @@ define(
 
       var userModel = app.userModel;
 
+      var summaryData = {
+        marketValue: 0,
+        totalCost: 0,
+        gain: 0
+      };
+
+      summaryData = options.tableData.reduce(function(memo, num) {
+
+        memo.marketValue += num.get('marketValue');
+        memo.totalCost += num.get('totalCost');
+
+        return memo;
+
+      }, summaryData);
+
+      summaryData.gain = summaryData.marketValue - summaryData.totalCost;
+
       summarytable.model = summarytableModel = new summarytableModule.Model({
 
-        marketValue: userModel.get('marketValue'),
-        totalCost: userModel.get('totalCost'),
-        gain: userModel.get('gain')
+        marketValue: summaryData.marketValue,
+        totalCost: summaryData.totalCost,
+        gain: summaryData.gain
 
       });
 

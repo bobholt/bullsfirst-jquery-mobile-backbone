@@ -9,11 +9,11 @@ define(
 
   function(positionsummaryModule, app){
 
-    return function() {
+    return function(ticker) {
 
-      var userAccounts = app.userModel.get('allAccounts');
+      var positionAccounts = app.userModel.getAccounts(ticker);
 
-      var positionsCollection = new positionsummaryModule.Collection(userAccounts);
+      var positionsCollection = new positionsummaryModule.Collection(positionAccounts);
 
       var positionsView = new positionsummaryModule.View({
 

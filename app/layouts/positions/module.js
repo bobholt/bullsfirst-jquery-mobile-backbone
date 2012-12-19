@@ -80,6 +80,7 @@ define(
           },
           {
             widget: 'summarytable',
+            tableData: positionsView.collection,
             element: '#positions-summary-wrapper'
           },
           {

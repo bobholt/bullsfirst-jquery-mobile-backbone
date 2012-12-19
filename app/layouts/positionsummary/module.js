@@ -28,33 +28,33 @@ define(
 
         // TODO: keep track of state on a model
         // TODO: extract these out to a prototype
-        // var chart = this.$el.find('.gain-loss-chart-wrapper');
-        // var table = this.$el.find('.gain-loss-table-wrapper');
-        // var chartSelect = this.$el.find('.chart-select');
-        // var tableSelect = this.$el.find('.table-select');
+        var chart = this.$el.find('.gain-loss-chart-wrapper');
+        var table = this.$el.find('.gain-loss-table-wrapper');
+        var chartSelect = this.$el.find('.chart-select');
+        var tableSelect = this.$el.find('.table-select');
 
-        // if (!chart.is(':visible')) {
-        //   chart.show();
-        //   chartSelect.addClass('active-view');
-        //   table.hide();
-        //   tableSelect.removeClass('active-view');
-        // }
+        if (!chart.is(':visible')) {
+          chart.show();
+          chartSelect.addClass('active-view');
+          table.hide();
+          tableSelect.removeClass('active-view');
+        }
 
       },
 
       selectTable: function() {
 
-        // var chart = this.$el.find('.gain-loss-chart-wrapper');
-        // var table = this.$el.find('.gain-loss-table-wrapper');
-        // var chartSelect = this.$el.find('.chart-select');
-        // var tableSelect = this.$el.find('.table-select');
+        var chart = this.$el.find('.gain-loss-chart-wrapper');
+        var table = this.$el.find('.gain-loss-table-wrapper');
+        var chartSelect = this.$el.find('.chart-select');
+        var tableSelect = this.$el.find('.table-select');
 
-        // if (!table.is(':visible')) {
-        //   E.publish('showTable');
-        //   tableSelect.addClass('active-view');
-        //   chart.hide();
-        //   chartSelect.removeClass('active-view');
-        // }
+        if (!table.is(':visible')) {
+          E.publish('showTable');
+          tableSelect.addClass('active-view');
+          chart.hide();
+          chartSelect.removeClass('active-view');
+        }
 
       },
 
@@ -66,30 +66,31 @@ define(
 
       postRender: function() {
 
-        // var positionsView = this;
+        var positionsummaryView = this;
 
-        // positionsView.$el.find('.chart-select').addClass('active-view');
+        positionsummaryView.$el.find('.chart-select').addClass('active-view');
 
         app.widgets.create([
           {
             widget: 'gainlossheader',
             element: '#position-summary'
           },
-        //   {
-        //     widget: 'summarytable',
-        //     element: '#positions-summary-wrapper'
-        //   },
-        //   {
-        //     widget: 'gainlosschart',
-        //     chartData: positionsView.collection,
-        //     element: '#positions-chart-wrapper'
-        //   },
-        //   {
-        //     widget: 'gainlosstable',
-        //     tableData: positionsView.collection,
-        //     element: '#positions-section',
-        //     tableWrapperId: 'positions-table-wrapper'
-        //   },
+          {
+            widget: 'summarytable',
+            tableData: positionsummaryView.collection,
+            element: '#position-summary-summary-wrapper'
+          },
+          {
+            widget: 'gainlosschart',
+            chartData: positionsummaryView.collection,
+            element: '#position-summary-chart-wrapper'
+          },
+          {
+            widget: 'gainlosstable',
+            tableData: positionsummaryView.collection,
+            element: '#position-summary-section',
+            tableWrapperId: 'position-summary-table-wrapper'
+          },
           {
             widget: 'gainlossfooter',
             element: '#position-summary-footer div',

@@ -66,7 +66,7 @@ function(app, E) {
 
     },
 
-    showPositionSummary: function(page, ticker) {
+    showPositionSummary: function(ticker) {
 
       E.publish('pageChange');
 
@@ -76,7 +76,7 @@ function(app, E) {
 
           $.mobile.changePage('#position-summary', {changeHash: false});
 
-          main();
+          main(ticker);
 
         });
 
