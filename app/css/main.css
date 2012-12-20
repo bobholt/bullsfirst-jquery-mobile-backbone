@@ -38,7 +38,7 @@ label,
 label.ui-input-text {
   background: #656565;
   color: #F7E4C8;
-  font-size: 0.625em; /* 10 / 16 = 0.625 */
+  font-size: 0.6875em; /* 11 / 16 = 0.6875 */
   height: 2.5em; /* 25 / 10 = 2.5 */
   line-height: 2.5em;
   margin: 0;
@@ -191,8 +191,14 @@ p.tooltip {
     text-align: right;
 }
 
-.gain-loss-table td.positions,
-.gain-loss-table th.positions {
+#positions .gain-loss-table td.positions,
+#positions .gain-loss-table th.positions
+#account-summary .gain-loss-table td.account-summary,
+#account-summary .gain-loss-table th.account-summary,
+#accounts .gain-loss-table td.accounts,
+#accounts .gain-loss-table th.accounts,
+#position-summary .gain-loss-table td.position-summary,
+#position-summary .gain-loss-table th.position-summary {
   display: table-cell;
 }
 
@@ -294,7 +300,8 @@ h3.subhead {
   width: 100%;
 }
 
-#l-login-button {
+#l-login-button,
+#o-register-button {
   color: #fff;
   display: block;
   font-size: 0.75em; /* 12 / 16 = 0.75 */;
@@ -338,7 +345,15 @@ h3.subhead {
   font-size: 0.9375em; /* 15 / 16 = 0.9375 */
   margin-bottom: 1.3333333333em; /* 20 / 15 = 1.3333333333 */
   text-transform: uppercase;
-  width: 50%;
+  width: 87%;
+}
+
+.gain-loss-page h1 .divider {
+  color: #B84E42;
+}
+
+.gain-loss-page h1 .security-name {
+  text-transform: none;
 }
 
 .gain-loss-header {
@@ -484,4 +499,49 @@ h3.subhead {
 .gain-loss-footer .ui-navbar .transactions a:active,
 .gain-loss-footer .ui-navbar .transactions a.active-tab {
   background-image: url(../img/transactions_lower_btn_icon_active.png);
+}
+
+/* -----------------------------------------------------------------------------
+* Modal
+* -------------------------------------------------------------------------- */
+
+.modal {
+  background: #404040;
+  color: #F7E4C8;
+  height: 100%;
+  padding: 0.8181818182em 2.1818181818em; /* 9 / 11 = 0.8181818182; 24/11 = 2.1818181818 */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal .close-button {
+  background: transparent url(../img/close_bg_normal.png) no-repeat scroll 0 0;
+  float: right;
+  height: 14px;
+  text-align: center;
+  width: 14px;
+}
+
+.modal .close-button:hover,
+.modal .close-button:focus {
+  background-image: url(../img/close_bg_hover.png);
+}
+
+.modal .close-button:active {
+  background-image: url(../img/close_bg_active.png);
+}
+
+.modal .close-button img {
+  vertical-align: top;
+  padding-top: 3px;
+}
+
+.modal h1 {
+  color: #fff;
+  font-size: 0.875em; /* 14 / 16 = 0.875 */
+}
+
+.modal .instructions {
+  font-size: 0.6875em; /* 11 / 16 = 0.6875 */
 }

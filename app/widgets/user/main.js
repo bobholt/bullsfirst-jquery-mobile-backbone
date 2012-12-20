@@ -27,8 +27,6 @@ define(
         success: function(collection) {
 
           userData.accounts = collection;
-          // userData.allAccounts = computeAccountData(collection);
-          // userData.allPositions = computePositionData(collection);
 
           user.model = userModel = app.userModel = new userModule.UserModel(userData);
 

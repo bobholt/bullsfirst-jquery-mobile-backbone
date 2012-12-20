@@ -13,12 +13,21 @@ define(
 
       var positionAccounts = app.userModel.getAccounts(ticker);
 
-      var positionsCollection = new positionsummaryModule.Collection(positionAccounts);
+      var securityName = app.userModel.getSecurityName(ticker);
 
-      var positionsView = new positionsummaryModule.View({
+      var positionsummaryCollection = new positionsummaryModule.Collection(positionAccounts);
+
+      var positionsummaryModel = new positionsummaryModule.Model({
+
+        security: securityName
+
+      });
+
+      var positionsummaryView = new positionsummaryModule.View({
 
         el: $('#position-summary'),
-        collection: positionsCollection
+        collection: positionsummaryCollection,
+        model: positionsummaryModel
 
       }).render();
 

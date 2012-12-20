@@ -16,6 +16,10 @@ function(E) {
   // creation.
   var app = {
 
+    // Caches for calculated results
+    accounts: {},
+    positions: {},
+
     // The root path to run the application.
     root: "/",
 

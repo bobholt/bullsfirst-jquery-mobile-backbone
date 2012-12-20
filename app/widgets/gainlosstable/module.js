@@ -75,7 +75,7 @@ define(
 
       showPositionSummary: function(e) {
 
-        app.router.navigate("#positions/" + $(e.currentTarget).data('ticker'), {trigger: true});
+        app.router.navigate("positions/" + $(e.currentTarget).data('ticker'), {trigger: true});
 
       },
 

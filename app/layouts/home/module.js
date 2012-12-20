@@ -19,6 +19,21 @@ define(
 
     Module.View = Backbone.SuperView.extend({
 
+      events: {
+
+        "click .open-account a": "openAccount"
+
+      },
+
+      openAccount: function() {
+
+        app.widgets.create({
+          widget: 'openaccountmodal',
+          element: 'body'
+        });
+
+      },
+
       postRender: function() {
 
         app.widgets.create({

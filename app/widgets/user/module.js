@@ -1,33 +1,41 @@
 define(
   [
 
+    'app',
+
     'backbone',
 
     'superview'
 
   ],
 
-  function(){
+  function(app){
 
     var Module = {};
 
     Module.UserModel = Backbone.Model.extend({
 
-      defaults: {
+      getSecurityName: function(ticker) {
 
-        marketValue: 0,
-        totalCost: 0,
-        gain: 0
+        var position = _.where(this.getPositions(), {symbol: ticker});
+
+        return position[0].name;
 
       },
 
       getAccounts: function(ticker) {
 
-        var accounts = this.get('accounts');
+        // Set up key for caching this data
+        var key = ticker || 'all';
 
-        var chartData = [];
+        // Check our app cache to see if we have calculated this before
+        if (!app.accounts[key]) {
 
-        accounts.each(function(account, index) {
+          var accounts = this.get('accounts');
+
+          var chartData = [];
+
+          accounts.each(function(account, index) {
 
             var accountData = {};
             var positions = account.get('positions');
@@ -65,79 +73,93 @@ define(
 
             chartData.push(accountData);
 
-        });
+          });
 
-        return chartData.sort(function (a, b) {
+          app.accounts[key] = chartData.sort(function (a, b) {
 
-          return b.gainPercent - a.gainPercent;
+            return b.gainPercent - a.gainPercent;
 
-        });
+          });
+
+        }
+
+        return app.accounts[key];
 
       },
 
-      getPositions: function() {
+      getPositions: function(account) {
 
-        var accounts = this.get('accounts');
+        // Set up key for caching this data
+        var key = account || 'all';
 
-        var allPositions = _.flatten(accounts.pluck('positions'));
-        var nameArray = [];
-        var chartData = [];
+        // Check our app cache to see if we have calculated this before
+        if (!app.positions[key]) {
 
-        $.each(allPositions, function(index, position) {
+          var accounts = this.get('accounts');
 
-            var duplicateIndex = nameArray.indexOf(position.instrumentSymbol);
-            var chartItem = chartData[duplicateIndex];
-            var newPosition = {};
+          var allPositions = _.flatten(accounts.pluck('positions'));
+          var nameArray = [];
+          var chartData = [];
 
-            newPosition.quantity = position.quantity;
-            newPosition.name = position.instrumentName;
-            newPosition.symbol = position.instrumentSymbol;
-            newPosition.marketValue = position.marketValue.amount;
+          $.each(allPositions, function(index, position) {
 
-            if (position.totalCost) {
+              var duplicateIndex = nameArray.indexOf(position.instrumentSymbol);
+              var chartItem = chartData[duplicateIndex];
+              var newPosition = {};
 
-                newPosition.lastTrade = position.lastTrade.amount;
-                newPosition.pricePaid = position.pricePaid.amount;
-                newPosition.totalCost = position.totalCost.amount;
-                newPosition.cashPosition = 0;
+              newPosition.quantity = position.quantity;
+              newPosition.name = position.instrumentName;
+              newPosition.symbol = position.instrumentSymbol;
+              newPosition.marketValue = position.marketValue.amount;
 
-            } else if (position.instrumentSymbol === "CASH") {
+              if (position.totalCost) {
 
-                newPosition.totalCost = position.marketValue.amount;
-                newPosition.cashPosition = position.marketValue.amount;
-                newPosition.quantity = position.marketValue.amount;
-                newPosition.lastTrade = 1;
-                newPosition.pricePaid = 1;
+                  newPosition.lastTrade = position.lastTrade.amount;
+                  newPosition.pricePaid = position.pricePaid.amount;
+                  newPosition.totalCost = position.totalCost.amount;
+                  newPosition.cashPosition = 0;
 
-            }
+              } else if (position.instrumentSymbol === "CASH") {
 
-            newPosition.gain = newPosition.marketValue - newPosition.totalCost;
-            newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
+                  newPosition.totalCost = position.marketValue.amount;
+                  newPosition.cashPosition = position.marketValue.amount;
+                  newPosition.quantity = position.marketValue.amount;
+                  newPosition.lastTrade = 1;
+                  newPosition.pricePaid = 1;
 
-            if (duplicateIndex === -1) {
+              }
 
-                chartData.push(newPosition);
-                nameArray.push(position.instrumentSymbol);
+              newPosition.gain = newPosition.marketValue - newPosition.totalCost;
+              newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
 
-            } else {
+              if (duplicateIndex === -1) {
 
-                chartItem.marketValue += newPosition.marketValue;
-                chartItem.totalCost += newPosition.totalCost;
-                chartItem.cashPosition += newPosition.cashPosition;
-                chartItem.quantity += newPosition.quantity;
+                  chartData.push(newPosition);
+                  nameArray.push(position.instrumentSymbol);
 
-                chartItem.gain += newPosition.gain;
-                chartItem.gainPercent = chartItem.gain / chartItem.totalCost * 100;
+              } else {
 
-            }
+                  chartItem.marketValue += newPosition.marketValue;
+                  chartItem.totalCost += newPosition.totalCost;
+                  chartItem.cashPosition += newPosition.cashPosition;
+                  chartItem.quantity += newPosition.quantity;
 
-        });
+                  chartItem.gain += newPosition.gain;
+                  chartItem.gainPercent = chartItem.gain / chartItem.totalCost * 100;
 
-        return chartData.sort(function(a, b) {
+              }
 
-          return b.gainPercent - a.gainPercent;
+          });
 
-        });
+          app.positions[key] = chartData.sort(function(a, b) {
+
+            return b.gainPercent - a.gainPercent;
+
+          });
+
+        }
+
+        return app.positions[key];
 
       }
 

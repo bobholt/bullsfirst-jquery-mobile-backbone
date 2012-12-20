@@ -17,6 +17,8 @@ define(
 
     Module.Collection = Backbone.Collection.extend();
 
+    Module.Model = Backbone.Model.extend();
+
     Module.View = Backbone.SuperView.extend({
 
       events: {
@@ -67,6 +69,8 @@ define(
       postRender: function() {
 
         var positionsummaryView = this;
+
+        positionsummaryView.$el.find('h1').append('<span class="divider"> &lsaquo; </span><span class="security-name">' + this.model.get('security') + '</span>');
 
         positionsummaryView.$el.find('.chart-select').addClass('active-view');
 
