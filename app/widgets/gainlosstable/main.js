@@ -17,17 +17,21 @@ define(
       var gainlosstableModel = null;
       var gainlosstableView = null;
 
+      gainlosstable.collection = gainlosstableCollection = options.tableData;
+
       gainlosstable.model = gainlosstableModel = new gainlosstableModule.Model({
 
-        tableData: options.tableData.toJSON()
+        tableData: gainlosstableCollection.toJSON()
 
       });
 
       gainlosstable.view = gainlosstableView = new gainlosstableModule.View({
 
+        collection: gainlosstableCollection,
         model: gainlosstableModel,
         scrollElement: options.scrollElement,
-        id: options.tableWrapperId
+        id: options.tableWrapperId,
+        tableType: options.element.replace(/^#(.+)-section/g, '$1')
 
       }).render().placeAt(options.element);
 

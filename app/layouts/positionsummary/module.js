@@ -15,7 +15,21 @@ define(
 
     var Module = {};
 
-    Module.Collection = Backbone.Collection.extend();
+    Module.PositionModel = Backbone.Model.extend({
+
+      initialize: function() {
+
+        this.set('cid', this.cid);
+
+      }
+
+    });
+
+    Module.Collection = Backbone.Collection.extend({
+
+      model: Module.PositionModel
+
+    });
 
     Module.Model = Backbone.Model.extend();
 
@@ -70,7 +84,7 @@ define(
 
         var positionsummaryView = this;
 
-        positionsummaryView.$el.find('h1').append('<span class="divider"> &lsaquo; </span><span class="security-name">' + this.model.get('security') + '</span>');
+        positionsummaryView.$el.find('h1').html('Positions <span class="divider"> &lsaquo; </span><span class="security-name">' + this.model.get('security') + '</span>');
 
         positionsummaryView.$el.find('.chart-select').addClass('active-view');
 

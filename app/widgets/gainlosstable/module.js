@@ -29,7 +29,7 @@ define(
 
       events: {
 
-        "click tbody tr": "showPositionSummary"
+        "click tbody tr": "showDetail"
 
       },
 
@@ -73,9 +73,25 @@ define(
 
       },
 
-      showPositionSummary: function(e) {
+      showDetail: function(e) {
 
-        app.router.navigate("positions/" + $(e.currentTarget).data('ticker'), {trigger: true});
+        if (this.options.tableType === 'positions') {
+
+          app.router.navigate("positions/" + $(e.currentTarget).data('ticker'), {trigger: true});
+
+        }
+
+        if (this.options.tableType === 'position-summary') {
+
+          app.widgets.create({
+
+            widget: 'positiondetailmodal',
+            element: 'body',
+            positionDetail: this.collection.get($(e.currentTarget).data('cid'))
+
+          });
+
+        }
 
       },
 

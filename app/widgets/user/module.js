@@ -51,25 +51,35 @@ define(
             accountData.cashPosition =  ticker ? 0 : account.get('cashPosition').amount;
             accountData.marketValue = 0;
             accountData.totalCost = 0;
+            accountData.quantity = 0;
+            accountData.children = [];
 
             $.each(positions, function (index, position) {
 
-                accountData.marketValue += position.marketValue.amount;
+              if (ticker) {
+                accountData.children = accountData.children.concat(position.children);
+              }
 
-                if (position.totalCost) {
+              accountData.quantity += position.quantity;
 
-                    accountData.totalCost += position.totalCost.amount;
+              accountData.marketValue += position.marketValue.amount;
 
-                } else if (position.instrumentSymbol === "CASH") {
+              if (position.totalCost) {
 
-                    accountData.totalCost += position.marketValue.amount;
+                  accountData.totalCost += position.totalCost.amount;
 
-                }
+              } else if (position.instrumentSymbol === "CASH") {
+
+                  accountData.totalCost += position.marketValue.amount;
+
+              }
 
             });
 
+            accountData.pricePaid = accountData.totalCost / accountData.quantity;
             accountData.gain = accountData.marketValue - accountData.totalCost;
             accountData.gainPercent = accountData.gain === 0 ? 0 : accountData.gain / accountData.totalCost * 100;
+            accountData.lastTrade = accountData.children[0] ? accountData.children[0].lastTrade.amount : accountData.marketValue / accountData.quantity;
 
             chartData.push(accountData);
 

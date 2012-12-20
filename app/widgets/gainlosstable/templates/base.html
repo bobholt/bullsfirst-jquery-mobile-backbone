@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       {{#each tableData}}
-        <tr data-ticker="{{this.symbol}}">
+        <tr data-ticker="{{this.symbol}}" data-cid="{{this.cid}}">
           <td class="accounts position-summary priority1 account">{{this.name}}</td>
           <td class="positions priority1 account">
             <span class="ticker">{{this.symbol}}</span><br />

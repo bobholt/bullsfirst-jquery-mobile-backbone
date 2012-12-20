@@ -60,6 +60,8 @@ require.config({
     loginformModule:        "widgets/loginform/module",
     openaccountmodalMain:   "widgets/openaccountmodal/main",
     openaccountmodalModule: "widgets/openaccountmodal/module",
+    positiondetailmodalMain:   "widgets/positiondetailmodal/main",
+    positiondetailmodalModule: "widgets/positiondetailmodal/module",
     summarytableMain:       "widgets/summarytable/main",
     summarytableModule:     "widgets/summarytable/module",
     userMain:               "widgets/user/main",

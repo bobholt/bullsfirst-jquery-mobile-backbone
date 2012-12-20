@@ -1,0 +1,27 @@
+<a href="#" class="close-button"><img src="app/img/close_icon.png" alt="Close"></a>
+
+<h1>Security</h1>
+
+<h2>Account: {{this.name}}</h2>
+
+<dl>
+  <dt>Quantity:</dt>
+  <dd>{{this.quantity}}</dd>
+
+  <dt>Last Trade:</dt>
+  <dd>{{formatMoney this.lastTrade}}</dd>
+
+  <dt>Market Value:</dt>
+  <dd>{{formatMoney this.marketValue}}</dd>
+
+  <dt>Price Paid:</dt>
+  <dd>{{formatMoney this.pricePaid}}</dd>
+
+  <dt>Total Cost:</dt>
+  <dd>{{formatMoney this.totalCost}}</dd>
+</dl>
+
+<div class="buy-sell">
+  <a href="" class="buy-button">Buy</a>
+  <a href="" class="sell-button">Sell</a>
+</div>
