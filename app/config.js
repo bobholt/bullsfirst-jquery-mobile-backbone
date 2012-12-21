@@ -46,6 +46,8 @@ require.config({
 
     // Widgets
     baseWidget:             "widgets/_lib/baseWidget",
+    addaccountmodalMain:    "widgets/addaccountmodal/main",
+    addaccountmodalModule:  "widgets/addaccountmodal/module",
     gainlosschartMain:      "widgets/gainlosschart/main",
     gainlosschartModule:    "widgets/gainlosschart/module",
     gainlossfooterMain:     "widgets/gainlossfooter/main",

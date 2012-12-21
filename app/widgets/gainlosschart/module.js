@@ -51,11 +51,15 @@ define(
           var colorLoss = '#EF4723';
           var colorCash = '#C4C4C4';
           var gapWidth = 1;
-          var labelSpace = 15;
+          var labelSpace = this.options.chartType === 'accounts' ? 25 : 15;
           var labelAttr = {
             "font-family": "Arial",
             "font-size": "9",
             "transform": "r-90"
+          };
+          var cashLabelAttr = {
+            "font-famiy": "Arial",
+            "font-size": "7"
           };
 
           var numGaps = chartData.length - 1;
@@ -92,6 +96,9 @@ define(
             var positionWidth = Math.round((position.get('totalCost')/totalInvestment) * totalPositionWidth);
 
             var gainPercent = position.get('gainPercent');
+            var cashPosition = position.get('cashPosition');
+            var cashPct = cashPosition / position.get('totalCost');
+            var nonCashInvestmentPct = 1 - cashPct;
 
             if (gainPercent >= 0) {
 
@@ -120,9 +127,15 @@ define(
 
               }
 
-              // Draw the investment bar
-              var color = (position.get('symbol') === 'CASH') ? colorCash : colorInvestment;
-              paper.rect(nextX, chartHeight/2, positionWidth, chartHeight/2).attr({'stroke-width': 0, 'fill': color}).mouseover(function() {
+              // Draw the non-cash investment bar
+              paper.rect(nextX, chartHeight/2, positionWidth, chartHeight/2 * nonCashInvestmentPct).attr({'stroke-width': 0, 'fill': colorInvestment}).mouseover(function() {
+                  tooltip.css(tooltipCss).appendTo(chartView.$el);
+              }).mouseout(function() {
+                tooltip.remove();
+              });
+
+              // Draw the cash bar
+              paper.rect(nextX, chartHeight/2 + (chartHeight / 2 * nonCashInvestmentPct), positionWidth, chartHeight/2 * cashPct).attr({'stroke-width': 0, 'fill': colorCash}).mouseover(function() {
                   tooltip.css(tooltipCss).appendTo(chartView.$el);
               }).mouseout(function() {
                 tooltip.remove();
@@ -166,10 +179,21 @@ define(
 
           });
 
-          paper.text(4, 62, "GAIN").attr(labelAttr);
+          if (this.options.chartType === "accounts") {
 
-          paper.text(4, 185, "INVESTMENT").attr(labelAttr);
+            paper.text(10, 240, "CASH").attr(cashLabelAttr);
 
+            paper.text(9, 62, "GAIN").attr(labelAttr);
+
+            paper.text(9, 185, "INVESTMENT").attr(labelAttr);
+
+          } else {
+
+            paper.text(4, 62, "GAIN").attr(labelAttr);
+
+            paper.text(4, 185, "INVESTMENT").attr(labelAttr);
+
+          }
           this.paper = paper;
 
         }

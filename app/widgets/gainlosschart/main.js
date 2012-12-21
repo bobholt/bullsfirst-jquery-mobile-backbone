@@ -18,7 +18,8 @@ define(
 
       gainlosschart.view = gainlosschartView = new gainlosschartModule.View({
 
-        collection: options.chartData
+        collection: options.chartData,
+        chartType: options.element.replace('#','').split('-')[0]
 
       }).render().placeAt(options.element);
 

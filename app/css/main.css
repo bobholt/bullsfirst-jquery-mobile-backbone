@@ -56,6 +56,8 @@ body > section {
   width: 100%;
 }
 
+.ir { display: block; border: 0; text-indent: 100%; white-space: nowrap; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+
 /* -----------------------------------------------------------------------------
  * Colors
  * -------------------------------------------------------------------------- */
@@ -177,7 +179,7 @@ p.tooltip {
     text-shadow: none;
     display: none;
     text-align: right;
-
+    padding: 0 0.4166666667em; /* 5 / 12 = 0.4166666667 */
 }
 
 .gain-loss-table tr:hover td,
@@ -257,6 +259,28 @@ p.tooltip {
     text-align: center;
 }
 
+.gain-loss-table th.accounts.account {
+  min-width: 7.5em; /* 90 / 12 = 7.5 */
+}
+
+.gain-loss-table .add-account {
+  background: transparent url(../img/add_account_icon_normal.png) no-repeat scroll 0 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 13px;
+  margin-left: 5px;
+  width: 13px;
+}
+
+.gain-loss-table .add-account:hover,
+.gain-loss-table .add-account:focus {
+  background-image: url(../img/add_account_icon_hover.png);
+}
+
+.gain-loss-table .add-account:active {
+  background-image: url(../img/add_account_icon_active.png);
+}
+
 /* -----------------------------------------------------------------------------
  * Home Page
  * -------------------------------------------------------------------------- */
@@ -307,6 +331,7 @@ h3.subhead {
   width: 100%;
 }
 
+#a-add-button,
 #l-login-button,
 #o-register-button {
   color: #fff;
@@ -346,13 +371,17 @@ h3.subhead {
   margin: 0 auto;
 }
 
+.content-section header {
+  min-width: 18em; /* 288 / 16 = 18 */
+}
+
 .gain-loss-page h1,
 .transaction-page h1 {
   display: inline-block;
   font-size: 0.9375em; /* 15 / 16 = 0.9375 */
   margin-bottom: 1.3333333333em; /* 20 / 15 = 1.3333333333 */
   text-transform: uppercase;
-  width: 87%;
+  width: 81.956%;
 }
 
 .gain-loss-page h1 .divider {
@@ -367,7 +396,7 @@ h3.subhead {
   background: #F79F1E;
   height: 2.1875em; /* 38 / 16 = 2.1875 */
   margin-bottom: 0.625em; /* 10 / 16 = 0.625 */
-  min-width: 14em; /* 224 / 16 = 14 */
+  min-width: 15.125em; /* 242 / 16 = 15.125 */
 }
 
 .gain-loss-header menu {
@@ -527,6 +556,7 @@ h3.subhead {
 
 .modal .close-button {
   background: transparent url(../img/close_bg_normal.png) no-repeat scroll 0 0;
+  cursor: pointer;
   float: right;
   height: 14px;
   text-align: center;

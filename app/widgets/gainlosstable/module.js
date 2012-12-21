@@ -29,7 +29,19 @@ define(
 
       events: {
 
-        "click tbody tr": "showDetail"
+        "click tbody tr": "showDetail",
+        "click .add-account": "addAccount"
+
+      },
+
+      addAccount: function(e) {
+
+        e.preventDefault();
+
+        app.widgets.create({
+          widget: 'addaccountmodal',
+          element: 'body'
+        });
 
       },
 

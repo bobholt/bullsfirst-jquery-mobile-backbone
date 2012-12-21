@@ -13,13 +13,13 @@ define(
 
       var positiondetailmodal = new Widget();
 
+      positiondetailmodal.model = positiondetailModel = options.positionDetail;
+
       positiondetailmodal.view = new positiondetailmodalModule.View({
 
         model: options.positionDetail
 
       }).render().placeAt(options.element);
-
-      console.log(options.positionDetail);
 
     };
 
