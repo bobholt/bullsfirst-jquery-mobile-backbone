@@ -25,6 +25,8 @@ define(
 
       getAccounts: function(ticker) {
 
+        var userModel = this;
+
         // Set up key for caching this data
         var key = ticker || 'all';
 
@@ -43,6 +45,8 @@ define(
             if (ticker) {
 
               positions = _.where(positions, {instrumentSymbol: ticker});
+              accountData.ticker = ticker;
+              accountData.security = userModel.getSecurityName(ticker);
 
             }
 
@@ -75,6 +79,9 @@ define(
               }
 
             });
+
+            // So it renders in reverse-chronological order by default
+            accountData.children.reverse();
 
             accountData.pricePaid = accountData.totalCost / accountData.quantity;
             accountData.gain = accountData.marketValue - accountData.totalCost;

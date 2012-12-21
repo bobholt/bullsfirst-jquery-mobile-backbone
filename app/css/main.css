@@ -162,6 +162,11 @@ p.tooltip {
     width: 100%;
 }
 
+#position-summary .gain-loss-table,
+#accounts .gain-loss-table {
+  font-size: 0.75em; /* 12 / 16 = 0.75 */
+}
+
 .gain-loss-table thead tr {
     background-color: #999999;
     height: 23px;
@@ -206,21 +211,23 @@ p.tooltip {
   border-bottom: 0 none;
 }
 
-.gain-loss-table .account {
+.gain-loss-table .account,
+.gain-loss-table .security {
+    color: #333;
+    font-weight: bold;
+    padding-left: 1.6em; /* 16 / 10 = 1.6 */
+    text-align: left;
+}
+
+.gain-loss-table .positions.account {
   font-size: 0.9em; /* 9 / 10 = 0.9 */
+  font-weight: normal;
 }
 
 .gain-loss-table .ticker {
   font-size: 1.1111111111em; /* 10 / 9 = 1.1111111111 */
   font-weight: bold;
   line-height: 1.7em; /* 17 / 10 = 1.7 */
-}
-
-.gain-loss-table .account,
-.gain-loss-table .security {
-    color: #333;
-    padding-left: 1.6em; /* 16 / 10 = 1.6 */
-    text-align: left;
 }
 
 .gain-loss-table .gain-percent {
@@ -507,12 +514,15 @@ h3.subhead {
 
 .modal {
   background: #404040;
-  color: #F7E4C8;
+  color: #fff;
   height: 100%;
-  padding: 0.8181818182em 2.1818181818em; /* 9 / 11 = 0.8181818182; 24/11 = 2.1818181818 */
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 0.5625em 1.125em; /* 9 / 11 = 0.5625; 18 / 16 = 1.125 */
 }
 
 .modal .close-button {
@@ -538,10 +548,81 @@ h3.subhead {
 }
 
 .modal h1 {
-  color: #fff;
   font-size: 0.875em; /* 14 / 16 = 0.875 */
+  margin-bottom: 1.2857142857em; /* 18 / 14 = 1.2857142857 */
+}
+
+.modal h2 {
+  float: left;
+  font-size: 0.875em; /* 14 / 16 = 0.875 */
+  font-weight: normal;
+  line-height: 1.25em;
+  width: 50%; /* 250 / 14 = 17.857142857 */
 }
 
 .modal .instructions {
+  color: #F7E4C8;
   font-size: 0.6875em; /* 11 / 16 = 0.6875 */
+}
+
+.modal .transaction-wrapper {
+  height: 3.5625em; /* 57 / 16 = 3.5625 */
+  margin-bottom: 0.375em; /* 6 / 16 = 0.375 */
+  min-width: 236px;
+}
+
+.modal .buy-sell {
+  float: left;
+  width: 50%;
+}
+
+.modal .buy-sell a {
+  background: #F37520;
+  color: #fff;
+  float: right;
+  font-size: 0.75em; /* 12 / 16 = 0.75 */
+  height: 4.75em; /* 57 / 12 = 4.75 */
+  line-height: 4.75em; /* 57 / 12 = 4.75 */
+  margin-left: 0.1666666667em; /* 2 / 12 = 0.1666666667 */
+  text-align: center;
+  width: 4.75em; /* 57 / 12 = 4.75 */
+}
+
+.modal table {
+  font-size: 0.625em; /* 10 / 16 = 0.625 */
+  width: 100%;
+  margin-bottom: 1.7em; /* 17 / 10 = 1.7 */
+}
+
+.position-overview td {
+  width: 50%;
+}
+
+.position-overview .label {
+  font-weight: bold;
+}
+
+.position-lots thead {
+  background: #666;
+  border-top: solid 1px #fff;
+  color: #F6E4B9;
+}
+
+.position-lots thead th {
+  font-weight: normal;
+}
+
+.position-lots td,
+.position-lots th {
+  line-height: 1.8em;
+  text-align: right;
+}
+
+.position-lots .lot-date {
+  padding-left: 1.8em; /* 18 / 10 = 1.8 */
+  text-align: left;
+}
+
+.position-lots .total-cost {
+  padding-right: 1.8em; /* 18 / 10 = 1.8 */
 }

@@ -67,9 +67,10 @@ function(E) {
 
   // Register Handlebar helpers
   Handlebars.registerHelper('formatMoney', function(amount) {
-      return (amount >= 0) ?
-          '$' + $.format.number(amount, '#,##0.00') :
-          '($' + $.format.number(-amount, '#,##0.00') + ')';
+    amount = amount || 0;
+    return (amount >= 0) ?
+        '$' + $.format.number(amount, '#,##0.00') :
+        '($' + $.format.number(-amount, '#,##0.00') + ')';
   });
 
   Handlebars.registerHelper('formatPercent', function(percent) {
@@ -80,6 +81,12 @@ function(E) {
 
   Handlebars.registerHelper('getSign', function(number) {
       return (number >= 0) ? 'positive' : 'negative';
+  });
+
+  Handlebars.registerHelper('parseDateString', function(string) {
+    var dateArr = string.split('T')[0].split('-');
+
+    return dateArr[1] + '/' + dateArr[2] + '/' + dateArr[0];
   });
 
   return app;

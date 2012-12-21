@@ -1,27 +1,58 @@
-<a href="#" class="close-button"><img src="app/img/close_icon.png" alt="Close"></a>
+<section class="modal-content">
 
-<h1>Security</h1>
+  <a href="#" class="close-button"><img src="app/img/close_icon.png" alt="Close"></a>
 
-<h2>Account: {{this.name}}</h2>
+  <h1>{{security}}</h1>
 
-<dl>
-  <dt>Quantity:</dt>
-  <dd>{{this.quantity}}</dd>
+  <section class="transaction-wrapper">
 
-  <dt>Last Trade:</dt>
-  <dd>{{formatMoney this.lastTrade}}</dd>
+    <h2>Account: {{name}}</h2>
 
-  <dt>Market Value:</dt>
-  <dd>{{formatMoney this.marketValue}}</dd>
+    <div class="buy-sell">
+      <a href="" class="sell-button">Sell</a>
+      <a href="" class="buy-button">Buy</a>
+    </div>
 
-  <dt>Price Paid:</dt>
-  <dd>{{formatMoney this.pricePaid}}</dd>
+  </section>
 
-  <dt>Total Cost:</dt>
-  <dd>{{formatMoney this.totalCost}}</dd>
-</dl>
+  <table class="position-overview">
+    <tr>
+      <td><span class="label">Quantity:</span> {{quantity}}</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><span class="label">Last Trade:</span> {{formatMoney lastTrade}}</td>
+      <td><span class="label">Price Paid:</span> {{formatMoney pricePaid}}</td>
+    </tr>
+    <tr>
+      <td><span class="label">Market Value:</span> {{formatMoney marketValue}}</td>
+      <td><span class="label">Total Cost:</span> {{formatMoney totalCost}}</td>
+    </tr>
+  </table>
 
-<div class="buy-sell">
-  <a href="" class="buy-button">Buy</a>
-  <a href="" class="sell-button">Sell</a>
-</div>
+</section>
+
+<table class="position-lots">
+  <thead>
+    <tr>
+      <th class="lot-date">Lot</th>
+      <th>Quantity</th>
+      <th>Price Paid</th>
+      <th class="total-cost">Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each children}}
+      <tr>
+        <td class="lot-date">{{parseDateString this.lotCreationTime}}</td>
+        <td>{{this.quantity}}</td>
+        {{#with this.pricePaid}}
+          <td>{{formatMoney amount}}</td>
+        {{/with}}
+        {{#with this.totalCost}}
+          <td class="total-cost">{{ formatMoney amount}}</td>
+        {{/with}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
