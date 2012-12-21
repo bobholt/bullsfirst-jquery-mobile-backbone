@@ -19,7 +19,6 @@ define(
 
       gainlosstable.collection = gainlosstableCollection = options.tableData;
 
-      console.log(gainlosstableCollection);
 
       gainlosstable.model = gainlosstableModel = new gainlosstableModule.Model({
 

@@ -51,6 +51,7 @@ define(
             }
 
             accountData.name = account.get('name');
+            accountData.accountName = accountData.name;
             accountData.symbol = account.get('name');
             accountData.cashPosition =  ticker ? 0 : account.get('cashPosition').amount;
             accountData.marketValue = 0;
@@ -163,6 +164,19 @@ define(
 
             }
 
+            if (account) {
+
+              newPosition.accountName = account;
+              newPosition.children = position.children;
+
+              if (newPosition.children) {
+
+                newPosition.children.reverse();
+
+              }
+
+            }
+            newPosition.security = newPosition.name;
             newPosition.gain = newPosition.marketValue - newPosition.totalCost;
             newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
 

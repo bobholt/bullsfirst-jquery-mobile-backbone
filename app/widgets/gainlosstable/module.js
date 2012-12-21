@@ -99,7 +99,7 @@ define(
 
         }
 
-        if (this.options.tableType === 'position-summary') {
+        if (this.options.tableType === 'position-summary' || this.options.tableType === 'account-summary') {
 
           app.widgets.create({
 
