@@ -13,7 +13,7 @@
         <th class="positions accounts priority3 gain">Gain</th>
         <th class="accounts position-summary priority1 gain-percent">Gain</th>
         <th class="accounts priority1 cash">Cash</th>
-        <th class="accounts positions position-summary priority1 details"></th>
+        <th class="accounts account-summary positions position-summary priority1 details"></th>
       </tr>
     </thead>
     <tbody>
@@ -45,7 +45,7 @@
           <td class="positions accounts priority3 gain {{getSign gain}}">{{formatMoney this.gain}}</td>
           <td class="accounts position-summary priority1 gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
           <td class="accounts priority1 cash">{{formatMoney this.cashPosition}}</td>
-          <td class="positions accounts position-summary priority1 details"><a href="#"><img src="app/img/more_info_icon.png" alt="More Info"></a></td>
+          <td class="positions accounts account-summary position-summary priority1 details"><a href="#"><img src="app/img/more_info_icon.png" alt="More Info"></a></td>
         </tr>
       {{/each}}
       <!-- Table Rows Go Here -->

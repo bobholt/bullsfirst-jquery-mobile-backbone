@@ -69,6 +69,8 @@ require.config({
     positiondetailmodalModule: "widgets/positiondetailmodal/module",
     summarytableMain:       "widgets/summarytable/main",
     summarytableModule:     "widgets/summarytable/module",
+    transactionfilterMain:       "widgets/transactionfilter/main",
+    transactionfilterModule:     "widgets/transactionfilter/module",
     userMain:               "widgets/user/main",
     userModule:             "widgets/user/module"
 

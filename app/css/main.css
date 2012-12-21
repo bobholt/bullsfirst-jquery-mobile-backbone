@@ -538,6 +538,106 @@ h3.subhead {
 }
 
 /* -----------------------------------------------------------------------------
+* Transaction Filter
+* -------------------------------------------------------------------------- */
+
+.checkboxes {
+  clear: both;
+  margin-bottom: 1em;
+}
+
+#transactions .checkboxes,
+.filters {
+  clear: left;
+  display: none;
+}
+
+.ui-checkbox {
+  width: 33.333333333%;
+  float: left;
+}
+
+.ui-checkbox:last-child {
+  margin-left: 33.33333333%;
+}
+.ui-select .ui-btn {
+  background: #fff;
+  font-size: 0.75em; /* 12 / 16 = 0.75 */
+  height: 1.5833333333em;
+  margin: 0;
+}
+.ui-checkbox .ui-btn {
+  background: transparent;
+  color: #333333;
+  margin: 0;
+  width: auto;
+}
+.ui-checkbox .ui-btn-inner {
+  text-overflow: auto;
+}
+.ui-select .ui-btn-inner {
+  line-height: 1.5833333333em; /* 19 / 12 = 1.5833333333 */
+  padding-left: 0.5em;
+}
+.ui-icon-checkbox-on {
+  background: #F37620 url(../img/check_icon.png) no-repeat scroll center center;
+}
+
+.ui-icon-checkbox-off {
+  background-color: #F37620;
+}
+
+#filter-form {
+  background: #BFBFBF;
+  left: 0;
+  padding: 0.375em 0.8125em; /* 6 / 16 = 0.375 */
+  position: absolute;
+  width: 100%;
+}
+
+#filter-form .login-icon {
+  margin-top: 3px;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.ui-select {
+  float: left;
+  margin-bottom: 1em;
+}
+
+label.ui-select {
+  height: 1.7272727273em; /* 19 / 11 = 1.7272727273 */
+  line-height: 1.7272727273em; /* 19 / 11 = 1.7272727273 */
+  padding: 0 0.8em;
+  width: auto;
+}
+
+#f-reset-button {
+  clear: left;
+  color: #fff;
+  font-size: 0.6875em; /* 11 / 16 = 0.6875 */
+  height: 2.2727272727em; /* 25 / 11 = 2.2727272727 */
+  line-height: 2.2727272727em; /* 25 / 11 = 2.2727272727 */
+  width: 34.0625%; /* 109 / 320 = 0.340625 */
+  margin: 1em auto 2.1818181818em; /* 24 / 11 = 2.1818181818 */
+}
+
+.show-hide {
+  background: #404041;
+  bottom: 0.5454545455em; /* 6 / 11 = 0.5454545455 */
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 0.6875em; /* 11 / 16 = 0.6875 */
+  left: 0;
+  line-height: 1.6363636364em; /* 18 / 11 = 1.6363636364 */
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+/* -----------------------------------------------------------------------------
 * Modal
 * -------------------------------------------------------------------------- */
 

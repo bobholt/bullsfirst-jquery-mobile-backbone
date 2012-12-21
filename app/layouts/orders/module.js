@@ -36,6 +36,10 @@ define(
             widget: 'gainlossfooter',
             element: '#orders-footer div',
             active: 'orders'
+          },
+          {
+            widget: 'transactionfilter',
+            element: '#orders-filter'
           }
         ]);
 
