@@ -42,37 +42,37 @@ define(
 
       postRender: function() {
 
-        var positionsummaryView = this;
+        var accountsummaryView = this;
 
-        positionsummaryView.$el.find('h1').html('Positions <span class="divider"> &lsaquo; </span><span class="security-name">' + this.model.get('security') + '</span>');
+        accountsummaryView.$el.find('h1').html('Accounts <span class="divider"> &lsaquo; </span><span class="security-name">' + this.model.get('account') + '</span>');
 
-        positionsummaryView.$el.find('.chart-select').addClass('active-view');
+        accountsummaryView.$el.find('.chart-select').addClass('active-view');
 
         app.widgets.create([
           {
             widget: 'gainlossheader',
-            element: '#position-summary'
+            element: '#account-summary'
           },
           {
             widget: 'summarytable',
-            tableData: positionsummaryView.collection,
-            element: '#position-summary-summary-wrapper'
+            tableData: accountsummaryView.collection,
+            element: '#account-summary-summary-wrapper'
           },
           {
             widget: 'gainlosschart',
-            chartData: positionsummaryView.collection,
-            element: '#position-summary-chart-wrapper'
+            chartData: accountsummaryView.collection,
+            element: '#account-summary-chart-wrapper'
           },
           {
             widget: 'gainlosstable',
-            tableData: positionsummaryView.collection,
-            element: '#position-summary-section',
-            tableWrapperId: 'position-summary-table-wrapper'
+            tableData: accountsummaryView.collection,
+            element: '#account-summary-section',
+            tableWrapperId: 'account-summary-table-wrapper'
           },
           {
             widget: 'gainlossfooter',
-            element: '#position-summary-footer div',
-            active: 'positions'
+            element: '#account-summary-footer div',
+            active: 'accounts'
           }
         ]);
 

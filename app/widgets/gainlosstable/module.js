@@ -93,6 +93,12 @@ define(
 
         }
 
+        if (this.options.tableType === 'accounts') {
+
+          app.router.navigate("accounts/" + encodeURIComponent($(e.currentTarget).data('ticker')), {trigger: true});
+
+        }
+
         if (this.options.tableType === 'position-summary') {
 
           app.widgets.create({

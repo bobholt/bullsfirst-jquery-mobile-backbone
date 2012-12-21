@@ -31,8 +31,11 @@ require.config({
     pubsub:                 "../libs/js/pubsub",
 
     // Layouts
+    gainLossLayoutView:     "layouts/_lib/gainLossLayoutView",
     accountsMain:           "layouts/accounts/main",
     accountsModule:         "layouts/accounts/module",
+    accountsummaryMain:     "layouts/accountsummary/main",
+    accountsummaryModule:   "layouts/accountsummary/module",
     homeMain:               "layouts/home/main",
     homeModule:             "layouts/home/module",
     ordersMain:             "layouts/orders/main",

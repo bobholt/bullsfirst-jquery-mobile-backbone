@@ -27,7 +27,8 @@ function(app, E) {
       "":       "index",
       "login": "index",
       ":page":  "goToPage",
-      "positions/:ticker": "showPositionSummary"
+      "positions/:ticker": "showPositionSummary",
+      "accounts/:account": "showAccountSummary"
     },
 
     index: function() {
@@ -61,6 +62,28 @@ function(app, E) {
       } else {
 
         this.navigate("login", {trigger: true});
+
+      }
+
+    },
+
+    showAccountSummary: function(account) {
+
+      E.publish('pageChange');
+
+      if (app.isLoggedIn) {
+
+        require(['accountsummaryMain'], function(main) {
+
+          $.mobile.changePage('#account-summary', {changeHash: false});
+
+          main(account);
+
+        });
+
+      } else {
+
+        this.navigate('login', {trigger: true});
 
       }
 

@@ -112,59 +112,76 @@ define(
         // Check our app cache to see if we have calculated this before
         if (!app.positions[key]) {
 
+          var allPositions = null;
+
           var accounts = this.get('accounts');
 
-          var allPositions = _.flatten(accounts.pluck('positions'));
+          if (account) {
+
+            accounts = accounts.where({
+
+              name: account
+
+            });
+
+            allPositions = accounts[0].get('positions');
+
+          } else {
+
+            allPositions = _.flatten(accounts.pluck('positions'));
+
+          }
+
           var nameArray = [];
           var chartData = [];
 
           $.each(allPositions, function(index, position) {
 
-              var duplicateIndex = nameArray.indexOf(position.instrumentSymbol);
-              var chartItem = chartData[duplicateIndex];
-              var newPosition = {};
+            var duplicateIndex = nameArray.indexOf(position.instrumentSymbol);
+            var chartItem = chartData[duplicateIndex];
+            var newPosition = {};
 
-              newPosition.quantity = position.quantity;
-              newPosition.name = position.instrumentName;
-              newPosition.symbol = position.instrumentSymbol;
-              newPosition.marketValue = position.marketValue.amount;
+            newPosition.quantity = position.quantity;
+            newPosition.name = position.instrumentName;
+            newPosition.symbol = position.instrumentSymbol;
+            newPosition.marketValue = position.marketValue.amount;
 
-              if (position.totalCost) {
+            if (position.totalCost) {
 
-                  newPosition.lastTrade = position.lastTrade.amount;
-                  newPosition.pricePaid = position.pricePaid.amount;
-                  newPosition.totalCost = position.totalCost.amount;
-                  newPosition.cashPosition = 0;
+                newPosition.lastTrade = position.lastTrade.amount;
+                newPosition.pricePaid = position.pricePaid.amount;
+                newPosition.totalCost = position.totalCost.amount;
+                newPosition.cashPosition = 0;
 
-              } else if (position.instrumentSymbol === "CASH") {
+            } else if (position.instrumentSymbol === "CASH") {
 
-                  newPosition.totalCost = position.marketValue.amount;
-                  newPosition.cashPosition = position.marketValue.amount;
-                  newPosition.quantity = position.marketValue.amount;
-                  newPosition.lastTrade = 1;
-                  newPosition.pricePaid = 1;
+                newPosition.totalCost = position.marketValue.amount;
+                newPosition.cashPosition = position.marketValue.amount;
+                newPosition.quantity = position.marketValue.amount;
+                newPosition.lastTrade = 1;
+                newPosition.pricePaid = 1;
 
-              }
+            }
 
-              newPosition.gain = newPosition.marketValue - newPosition.totalCost;
-              newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
+            newPosition.gain = newPosition.marketValue - newPosition.totalCost;
+            newPosition.gainPercent = (newPosition.gain / newPosition.totalCost) * 100;
 
-              if (duplicateIndex === -1) {
+            if (duplicateIndex === -1) {
 
-                  chartData.push(newPosition);
-                  nameArray.push(position.instrumentSymbol);
+                chartData.push(newPosition);
+                nameArray.push(position.instrumentSymbol);
 
-              } else {
+            } else {
 
-                  chartItem.marketValue += newPosition.marketValue;
-                  chartItem.totalCost += newPosition.totalCost;
-                  chartItem.cashPosition += newPosition.cashPosition;
-                  chartItem.quantity += newPosition.quantity;
+                chartItem.marketValue += newPosition.marketValue;
+                chartItem.totalCost += newPosition.totalCost;
+                chartItem.cashPosition += newPosition.cashPosition;
+                chartItem.quantity += newPosition.quantity;
 
-                  chartItem.gain += newPosition.gain;
-                  chartItem.gainPercent = chartItem.gain / chartItem.totalCost * 100;
+                chartItem.gain += newPosition.gain;
+                chartItem.gainPercent = chartItem.gain / chartItem.totalCost * 100;
 
-              }
+            }
 
           });
 

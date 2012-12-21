@@ -4,10 +4,10 @@
       <tr>
         <th class="accounts priority1 account">Account<span class="add-account ir">Add Account</span></th>
         <th class="position-summary priority1 account">Account</th>
-        <th class="positions priority1 security">Security</th>
-        <th class="positions position-summary priority1 quantity">Quantity</th>
-        <th class="positions priority1 last-trade">Last&nbsp;Trade</th>
-        <th class="positions position-summary accounts priority1 market-value">Market&nbsp;Value</th>
+        <th class="positions account-summary priority1 security">Security</th>
+        <th class="positions account-summary position-summary priority1 quantity">Quantity</th>
+        <th class="positions account-summary priority1 last-trade">Last&nbsp;Trade</th>
+        <th class="positions account-summary position-summary accounts priority1 market-value">Market&nbsp;Value</th>
         <th class="positions priority2 price-paid">Price Paid</th>
         <th class="positions priority3 total-cost">Total Cost</th>
         <th class="positions accounts priority3 gain">Gain</th>
@@ -20,19 +20,19 @@
       {{#each tableData}}
         <tr data-ticker="{{this.symbol}}" data-cid="{{this.cid}}">
           <td class="accounts position-summary priority1 account">{{this.name}}</td>
-          <td class="positions priority1 account">
+          <td class="positions account-summary priority1 account">
             <span class="ticker">{{this.symbol}}</span><br />
             {{this.name}}</td>
-          <td class="positions priority1 quantity">
+          <td class="positions account-summary priority1 quantity">
             {{this.quantity}}
             <br />&nbsp;</td>
           <td class="position-summary priority1 quantity">
             {{this.quantity}}</td>
-          <td class="positions priority1 last-trade">
+          <td class="positions account-summary priority1 last-trade">
             {{formatMoney this.lastTrade}}<br />
             &nbsp;</td>
           <td class="accounts position-summary priority1 market-value">{{formatMoney this.marketValue}}</td>
-          <td class="positions priority1 market-value">
+          <td class="positions account-summary priority1 market-value">
             {{formatMoney this.marketValue}}<br />
             <span class="{{getSign gainPercent}} gain-percent">{{formatPercent gainPercent}}</span>
           </td>
